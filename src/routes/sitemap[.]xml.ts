@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 
-const BASE_URL = "";
+const BASE_URL = "https://fraservalleyfloors.com";
 
 interface SitemapEntry {
   path: string;
@@ -23,8 +23,16 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/blog", changefreq: "weekly", priority: "0.6" },
           { path: "/locations", changefreq: "monthly", priority: "0.8" },
           { path: "/contact", changefreq: "monthly", priority: "0.7" },
-          ...services.map((s) => ({ path: `/services/${s.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
-          ...locations.map((l) => ({ path: `/locations/${l.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+          ...services.map((s) => ({
+            path: `/services/${s.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
+          ...locations.map((l) => ({
+            path: `/locations/${l.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
         ];
 
         const urls = entries.map((e) =>
@@ -34,7 +42,9 @@ export const Route = createFileRoute("/sitemap.xml")({
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ].filter(Boolean).join("\n"),
+          ]
+            .filter(Boolean)
+            .join("\n"),
         );
 
         const xml = [

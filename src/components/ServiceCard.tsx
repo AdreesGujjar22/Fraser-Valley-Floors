@@ -28,9 +28,8 @@ const iconFor = (slug: string) => {
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <Link
-      to="/services/$slug"
-      params={{ slug: service.slug }}
+    <a
+      href={`/services/${service.slug}`}
       className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-glow"
     >
       <div className="mb-4 grid h-12 w-12 place-items-center rounded-lg bg-primary/15 text-2xl text-primary">
@@ -43,6 +42,6 @@ export function ServiceCard({ service }: { service: Service }) {
       <div className="mt-4 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary">
         Learn more <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
       </div>
-    </Link>
+    </a>
   );
 }
