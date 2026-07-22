@@ -50,15 +50,16 @@ const galleryByCategory: Record<string, string[]> = {
   flooring: [g1, g4, g6, g3],
 };
 
-const serviceUrl = (slug: string) => `https://fraservalleyfloors.com/services/${slug}`;
+const serviceUrl = (slug: string) => `${site.url}/services/${slug}`;
+const socialImageUrl = `${site.url}/Fraser-Valley-Floors.png`;
 
 const getSeoContent = (service: Service) => {
   const applications = service.applications.slice(0, 3).join(", ");
   const serviceType = service.category === "coating" ? "concrete coating" : "flooring";
 
   return {
-    title: `${service.name} in Fraser Valley, BC | ${site.name}`,
-    description: `${service.short} Professional ${serviceType} installation for ${applications} across Abbotsford, Surrey, Langley, Chilliwack, and the Fraser Valley.`,
+    title: service.metaTitle,
+    description: service.metaDescription,
     keywords: `${service.name}, ${serviceType} Fraser Valley, ${serviceType} Abbotsford, ${serviceType} Langley, ${applications}`,
     localHeading: `${service.name} Installation Across the Fraser Valley`,
     localCopy: `${site.name} provides professional ${service.name.toLowerCase()} for ${applications} throughout Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta. Every project starts with an on-site assessment and a clear written estimate.`,
@@ -72,6 +73,7 @@ const getServiceSchema = (service: Service) => ({
   description: getSeoContent(service).description,
   url: serviceUrl(service.slug),
   areaServed: ["Abbotsford", "Surrey", "Langley", "Chilliwack", "Mission", "Maple Ridge", "Delta"],
+  mainEntityOfPage: serviceUrl(service.slug),
   provider: {
     "@type": "LocalBusiness",
     name: site.name,
@@ -113,8 +115,14 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:description", content: seo.description },
         { property: "og:url", content: url },
         { property: "og:type", content: "website" },
+        { property: "og:site_name", content: site.name },
+        { property: "og:image", content: socialImageUrl },
+        { property: "og:image:alt", content: `${site.name} logo` },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: seo.title },
         { name: "twitter:description", content: seo.description },
+        { name: "twitter:image", content: socialImageUrl },
+        { name: "twitter:image:alt", content: `${site.name} logo` },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [

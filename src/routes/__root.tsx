@@ -80,12 +80,14 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const localBusinessLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": site.url,
   name: site.name,
   description:
-    "Premium flooring and concrete coating services serving the Fraser Valley, BC.",
+    "Residential and commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC.",
   telephone: site.phone,
   email: site.email,
-  url: "https://fraservalleyfloors.com",
+  url: site.url,
+  image: `${site.url}/Fraser-Valley-Floors.png`,
   areaServed: [
     "Abbotsford", "Surrey", "Delta", "Langley", "Chilliwack", "Maple Ridge", "Mission",
   ],
@@ -102,16 +104,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fraser Valley Floors | Flooring & Concrete Coatings BC" },
+      { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
       {
         name: "description",
         content:
-          "Premium flooring and concrete coatings serving Abbotsford, Surrey, Langley, Chilliwack, Delta, Maple Ridge and Mission. Free quotes, licensed and insured.",
+          "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!",
       },
-      { name: "author", content: "Fraser Valley Floors" },
-      { property: "og:site_name", content: "Fraser Valley Floors" },
+      { name: "author", content: site.name },
+      { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `${site.url}/Fraser-Valley-Floors.png` },
+      { property: "og:image:alt", content: `${site.name} logo` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${site.url}/Fraser-Valley-Floors.png` },
+      { name: "twitter:image:alt", content: `${site.name} logo` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

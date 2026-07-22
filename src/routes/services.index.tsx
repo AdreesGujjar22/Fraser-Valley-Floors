@@ -19,9 +19,16 @@ export const Route = createFileRoute("/services/")({
         content:
           "Two divisions, one trusted team — concrete coatings and floor installation across the Fraser Valley.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://fraservalleyfloors.com/services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Our Services | Fraser Valley Floors" },
+      {
+        name: "twitter:description",
+        content:
+          "Two divisions, one trusted team — concrete coatings and floor installation across the Fraser Valley.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://fraservalleyfloors.com/services" }],
   }),
   component: ServicesPage,
 });

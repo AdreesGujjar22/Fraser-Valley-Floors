@@ -20,13 +20,16 @@ import g6 from "@/assets/gallery-6.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fraser Valley Floors | Premier Flooring & Concrete Coatings" },
-      { name: "description", content: "Fraser Valley's trusted flooring and concrete coating experts. Epoxy, polyaspartic, hardwood, vinyl & more. Serving Abbotsford, Surrey, Langley, Chilliwack, Delta, Maple Ridge & Mission." },
-      { property: "og:title", content: "Fraser Valley Floors | Premier Flooring & Concrete Coatings" },
-      { property: "og:description", content: "Premium flooring and concrete coatings across the Fraser Valley. Free quotes — licensed & insured." },
-      { property: "og:url", content: "/" },
+      { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
+      { name: "description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
+      { property: "og:title", content: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
+      { property: "og:description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
+      { property: "og:url", content: "https://fraservalleyfloors.com" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
+      { name: "twitter:description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://fraservalleyfloors.com" }],
   }),
   component: Home,
 });

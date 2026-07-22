@@ -1,4 +1,5 @@
 export const site = {
+  url: "https://fraservalleyfloors.com",
   name: "Fraser Valley Floors",
   tagline: "Fraser Valley's Premier Flooring & Concrete Coating Experts",
   phone: "(236) 878-3386",
