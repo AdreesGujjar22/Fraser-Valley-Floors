@@ -74,24 +74,24 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div itemScope itemType="https://schema.org/LocalBusiness">
             <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-primary">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href={site.phoneHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {site.phone}
+                  <span itemProp="telephone">{site.phone}</span>
                 </a>
               </li>
               <li>
                 <a href={site.emailHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors break-all">
                   <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {site.email}
+                  <span itemProp="email">{site.email}</span>
                 </a>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {site.address}
+                <span itemProp="address">{site.address}</span>
               </li>
             </ul>
             <div className="mt-6">

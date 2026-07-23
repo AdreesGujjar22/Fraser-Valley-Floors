@@ -93,8 +93,20 @@ const localBusinessLd = {
   ],
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Fraser Valley",
     addressRegion: "BC",
     addressCountry: "CA",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: site.phone,
+    contactType: "customer service",
+    areaServed: "CA-BC",
+    availableLanguage: "English",
+  },
+  serviceArea: {
+    "@type": "AdministrativeArea",
+    name: "Fraser Valley, British Columbia",
   },
   openingHours: ["Mo-Su 00:00-23:59"],
 };
@@ -129,6 +141,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-D8YJ6WSGHW",
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-D8YJ6WSGHW');`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(localBusinessLd),
