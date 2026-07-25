@@ -56,12 +56,22 @@ function LocationDetail() {
       />
 
       <section className="section-y">
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Local Expertise</div>
+            <h2 className="font-display text-2xl font-black md:text-3xl">Built for {loc.serviceFocus}</h2>
+            <p className="mt-4 text-lg text-foreground/80">{loc.blurb}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y">
         <div className="container-x grid gap-10 lg:grid-cols-2">
           <div>
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Epoxy & Coatings</div>
             <h2 className="font-display text-2xl font-black md:text-3xl">Epoxy Coatings in {loc.city}</h2>
             <p className="mt-4 text-foreground/85">
-              From single-car residential garages to large commercial shops, our coating crews work throughout {loc.city} delivering one-day polyaspartic systems, full-flake epoxy floors, and decorative patio overlays. Every coating is installed over diamond-ground, properly prepared concrete — the only way to get a finish that actually lasts.
+              {loc.coatingDescription}
             </p>
             <ul className="mt-5 grid gap-2 sm:grid-cols-2">
               {coatingServices.slice(0, 6).map((s) => (
@@ -77,7 +87,7 @@ function LocationDetail() {
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Floor Installation</div>
             <h2 className="font-display text-2xl font-black md:text-3xl">Floor Installation in {loc.city}</h2>
             <p className="mt-4 text-foreground/85">
-              Beautiful hardwood, durable vinyl plank, AC-rated laminate, custom stairs, and commercial carpet tile — installed by in-house crews who treat your {loc.city} home or business with the care it deserves. We handle the subfloor prep, the install, the transitions and the final cleanup.
+              {loc.flooringDescription}
             </p>
             <ul className="mt-5 grid gap-2 sm:grid-cols-2">
               {flooringServices.map((s) => (
@@ -97,7 +107,7 @@ function LocationDetail() {
           <div>
             <h2 className="font-display text-3xl font-black md:text-4xl">Why {loc.city} Trusts Fraser Valley Floors</h2>
             <p className="mt-4 text-foreground/80">
-              We've completed hundreds of projects in {loc.city} alone — and we'd love to add yours. Get a free, written estimate today.
+              {loc.trustDescription}
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex gap-2"><Check className="h-5 w-5 text-primary shrink-0" /> Licensed, insured, and fully bonded</li>
