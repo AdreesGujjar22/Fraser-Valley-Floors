@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Testimonials } from "@/components/Testimonials";
 import { GoogleMap } from "@/components/GoogleMap";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { coatingServices, flooringServices } from "@/data/services";
 import { locations } from "@/data/locations";
 import { Button } from "@/components/ui/button";
@@ -20,16 +21,25 @@ import g6 from "@/assets/gallery-6.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
-      { name: "description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
-      { property: "og:title", content: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
-      { property: "og:description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
+      { title: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
+      { name: "description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
+      { property: "og:title", content: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
+      { property: "og:description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
       { property: "og:url", content: "https://fraservalleyfloors.com" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
-      { name: "twitter:description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
+      { name: "twitter:title", content: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
+      { name: "twitter:description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
     ],
     links: [{ rel: "canonical", href: "https://fraservalleyfloors.com" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: homeFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    }) }],
   }),
   component: Home,
 });
@@ -50,6 +60,29 @@ const whyUs = [
 
 const gallery = [g1, g2, g3, g4, g5, g6];
 
+const homeFaqs = [
+  {
+    question: "What flooring and coating services do you provide?",
+    answer: "We install hardwood, vinyl plank, laminate, carpet tile, and custom stairs. We also apply epoxy, polyaspartic, polyurethane, decorative concrete, and other concrete coating systems.",
+  },
+  {
+    question: "Do you serve my Fraser Valley community?",
+    answer: "Yes. Our service area includes Abbotsford, Surrey, Delta, Langley, Chilliwack, Maple Ridge, Mission, and nearby communities across British Columbia's Fraser Valley.",
+  },
+  {
+    question: "How do I get a flooring or coating estimate?",
+    answer: "Submit the quote form with your project details. We will arrange a consultation, review the space and preparation needs, and provide a written estimate for the recommended work.",
+  },
+  {
+    question: "How long does a garage coating project take?",
+    answer: "Many residential garage coating projects can be completed in about one day after the concrete is properly prepared. The exact schedule depends on the floor condition, system selected, and site conditions.",
+  },
+  {
+    question: "Are your installers licensed and insured?",
+    answer: "Our projects are completed by trained in-house crews, and Fraser Valley Floors is licensed and insured. We explain the scope, materials, and expected timeline before work begins.",
+  },
+];
+
 function Home() {
   return (
     <>
@@ -59,7 +92,7 @@ function Home() {
         title={
           <>
             Fraser Valley's <span className="text-gradient-accent">Flooring Contractor</span><br />
-            Epoxy & Concrete Coating Experts
+            Epoxy Coatings & Concrete Experts
           </>
         }
         subtitle="Residential & commercial flooring installation, epoxy floor coatings, and concrete resurfacing - built to last, finished to impress."
@@ -86,7 +119,7 @@ function Home() {
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">What We Do</div>
-            <h2 className="font-display text-3xl font-black md:text-5xl">A Complete Range of Flooring Solutions</h2>
+            <h2 className="font-display text-3xl font-black md:text-5xl">Hardwood, Vinyl, and Complete Flooring Solutions</h2>
             <p className="mt-4 text-foreground/80">
               Two specialised divisions, one trusted team. From a one-day garage epoxy to a whole-home hardwood install — we do it all, and we do it right.
             </p>
@@ -94,8 +127,8 @@ function Home() {
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             <CategoryBlock
-              title="Concrete Coating Services"
-              subtitle="Tough, beautiful coatings for garages, shops, patios & commercial floors."
+              title="Epoxy & Concrete Coating Services"
+              subtitle="Tough, beautiful coatings for garage floors, warehouses, shops, patios & commercial spaces."
               services={coatingServices}
               categorySlug="coating"
             />
@@ -181,7 +214,52 @@ function Home() {
         </div>
       </section>
 
+      <section className="section-y bg-surface/40">
+        <div className="container-x grid gap-10 lg:grid-cols-2">
+          <div>
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">The Fraser Valley Floors Difference</div>
+            <h2 className="font-display text-3xl font-black md:text-4xl">A Better Floor Starts With Better Preparation</h2>
+            <p className="mt-4 text-foreground/80">
+              Every successful flooring or coating project begins with an honest look at the space. We check the concrete or subfloor, identify moisture and level concerns, review traffic patterns, and recommend materials that fit the way you use the room. That means a garage floor is not treated like a living room, and a busy warehouse is not treated like a residential hallway.
+            </p>
+            <p className="mt-4 text-foreground/80">
+              Our crews protect nearby walls and finishes, complete the necessary preparation, and keep the work area organized from the first visit through final cleanup. We explain the scope before work starts, including product choices, expected timing, maintenance, and any conditions that could affect the finished result.
+            </p>
+          </div>
+          <div>
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">How We Work</div>
+            <h3 className="font-display text-2xl font-black md:text-3xl">Clear Advice. Careful Installation. Lasting Results.</h3>
+            <ul className="mt-5 space-y-4 text-sm text-foreground/80">
+              <li><strong className="text-foreground">1. Plan the project.</strong> We learn about your goals, room conditions, schedule, and budget before suggesting a system.</li>
+              <li><strong className="text-foreground">2. Prepare the surface.</strong> Grinding, repairs, leveling, and clean edges give the new floor the foundation it needs.</li>
+              <li><strong className="text-foreground">3. Install with care.</strong> In-house crews follow the product requirements and pay attention to transitions, details, and finish quality.</li>
+              <li><strong className="text-foreground">4. Leave it ready.</strong> We review care instructions, remove installation debris, and make sure you know what comes next.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
+
+      <section className="section-y">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Questions & Answers</div>
+            <h2 className="font-display text-3xl font-black md:text-4xl">Answers Before You Start</h2>
+            <p className="mt-4 text-foreground/80">
+              Learn what to expect from a Fraser Valley flooring or concrete coating project.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {homeFaqs.map((faq, index) => (
+              <AccordionItem key={faq.question} value={`faq-${index}`}>
+                <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-foreground/80">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
 
       {/* Contact / Quote */}
       <section id="quote" className="section-y">

@@ -132,6 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image:alt", content: `${site.name} logo` },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/Fraser-Valley-Floors.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -150,10 +151,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-D8YJ6WSGHW');`,
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(localBusinessLd),
       },
     ],
   }),
@@ -182,6 +179,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+      />
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">

@@ -36,7 +36,9 @@ export function PageHero({
         src={image ?? heroDefault}
         alt=""
         className="absolute inset-0 -z-10 h-full w-full object-cover"
-        loading={size === "lg" ? "eager" : "lazy"}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
       <div
         className="absolute inset-0 -z-[5] bg-gradient-to-r from-black/75 via-black/55 to-black/25"

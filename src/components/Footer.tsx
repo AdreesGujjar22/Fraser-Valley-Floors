@@ -91,7 +91,9 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span itemProp="address">{site.address}</span>
+                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                  <span itemProp="addressLocality">Fraser Valley</span>, <span itemProp="addressRegion">BC</span>, <span itemProp="addressCountry">Canada</span>
+                </div>
               </li>
             </ul>
             <div className="mt-6">
