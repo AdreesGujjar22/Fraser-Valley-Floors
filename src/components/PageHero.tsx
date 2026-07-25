@@ -13,6 +13,7 @@ export function PageHero({
   crumbs,
   primaryCta,
   secondaryCta,
+  alt = "Fraser Valley flooring and epoxy coating project",
   size = "md",
 }: {
   eyebrow?: string;
@@ -22,6 +23,7 @@ export function PageHero({
   crumbs?: Crumb[];
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
+  alt?: string;
   size?: "sm" | "md" | "lg";
 }) {
   const heights = {
@@ -34,7 +36,7 @@ export function PageHero({
     <section className={`relative isolate flex items-center overflow-hidden ${heights[size]}`}>
       <img
         src={image ?? heroDefault}
-        alt=""
+        alt={alt}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
         loading="eager"
         fetchPriority="high"

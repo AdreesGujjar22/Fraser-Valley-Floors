@@ -21,14 +21,14 @@ import g6 from "@/assets/gallery-6.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
-      { name: "description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
-      { property: "og:title", content: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
-      { property: "og:description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
+      { title: "Flooring & Epoxy Coatings | Fraser Valley Floors" },
+      { name: "description", content: "Fraser Valley flooring contractor for epoxy coatings, hardwood, garage floors, warehouse coatings, and residential flooring. Get a free quote." },
+      { property: "og:title", content: "Flooring & Epoxy Coatings | Fraser Valley Floors" },
+      { property: "og:description", content: "Fraser Valley flooring contractor for epoxy coatings, hardwood, garage floors, warehouse coatings, and residential flooring. Get a free quote." },
       { property: "og:url", content: "https://fraservalleyfloors.com" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Flooring, Epoxy Coatings & Free Quotes | Fraser Valley Floors" },
-      { name: "twitter:description", content: "Fraser Valley flooring contractor for epoxy coatings, garage floors, warehouse coatings, and residential flooring. Get a free quote from Fraser Valley Floors." },
+      { name: "twitter:title", content: "Flooring & Epoxy Coatings | Fraser Valley Floors" },
+      { name: "twitter:description", content: "Fraser Valley flooring contractor for epoxy coatings, hardwood, garage floors, warehouse coatings, and residential flooring. Get a free quote." },
     ],
     links: [{ rel: "canonical", href: "https://fraservalleyfloors.com" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify({
@@ -88,6 +88,7 @@ function Home() {
     <>
       <PageHero
         size="lg"
+        alt="Polished epoxy garage floor in a Fraser Valley vehicle workshop"
         eyebrow="Fraser Valley, BC"
         title={
           <>
@@ -266,9 +267,9 @@ function Home() {
         <div className="container-x grid gap-10 lg:grid-cols-2">
           <div>
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Get a Free Quote</div>
-            <h2 className="font-display text-3xl font-black md:text-5xl">Let's Build Something That Lasts</h2>
+            <h2 className="font-display text-3xl font-black md:text-5xl">Get a Free Quote for Your Flooring Project</h2>
             <p className="mt-4 text-foreground/80">
-              Tell us about your project. We'll respond within one business day with a free, written estimate and a realistic timeline.
+              Tell us about your project. We'll respond within one business day with a free, written estimate and a realistic timeline. Service information updated for {new Date().getFullYear()}.
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex gap-2"><Users className="h-5 w-5 text-primary shrink-0" /> Free in-person or virtual consultation</li>
