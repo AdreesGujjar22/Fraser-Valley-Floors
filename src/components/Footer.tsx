@@ -66,9 +66,9 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {locations.map((l) => (
                 <li key={l.slug}>
-                  <Link to="/locations/$city" params={{ city: l.slug }} className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href={`/locations/${l.slug}`} className="text-muted-foreground hover:text-primary transition-colors">
                     {l.city}, BC
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

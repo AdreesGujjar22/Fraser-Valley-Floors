@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { ContactForm } from "@/components/ContactForm";
@@ -71,9 +71,9 @@ function Contact() {
           <ul className="mt-6 flex flex-wrap gap-2">
             {locations.map((l) => (
               <li key={l.slug}>
-                <Link to="/locations/$city" params={{ city: l.slug }} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+                <a href={`/locations/${l.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
                   <MapPin className="h-3.5 w-3.5 text-primary" /> {l.city}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

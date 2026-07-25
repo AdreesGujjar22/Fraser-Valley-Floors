@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
@@ -33,10 +33,9 @@ function LocationsIndex() {
       <section className="section-y">
         <div className="container-x grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((l) => (
-            <Link
+            <a
               key={l.slug}
-              to="/locations/$city"
-              params={{ city: l.slug }}
+              href={`/locations/${l.slug}`}
               className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-glow"
             >
               <div className="flex items-center gap-3">
@@ -49,7 +48,7 @@ function LocationsIndex() {
               <div className="mt-4 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary">
                 View {l.city} services <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

@@ -130,14 +130,14 @@ export function Header() {
               onToggle={() => setOpenMobile(openMobile === "l" ? null : "l")}
             >
               {locations.map((l) => (
-                <MobileLink
+                <a
                   key={l.slug}
-                  to="/locations/$city"
-                  params={{ city: l.slug }}
+                  href={`/locations/${l.slug}`}
                   onClick={() => setOpen(false)}
+                  className="block rounded px-3 py-2 text-sm font-medium hover:bg-surface-elevated hover:text-primary transition-colors"
                 >
                   {l.city}
-                </MobileLink>
+                </a>
               ))}
             </MobileGroup>
             <MobileLink to="/contact" onClick={() => setOpen(false)}>
@@ -257,14 +257,13 @@ function LocationsDropdown() {
           </Link>
           <div className="my-1 h-px bg-border" />
           {locations.map((l) => (
-            <Link
+            <a
               key={l.slug}
-              to="/locations/$city"
-              params={{ city: l.slug }}
+              href={`/locations/${l.slug}`}
               className="block rounded px-2 py-1.5 text-sm hover:bg-surface-elevated hover:text-primary transition-colors"
             >
               {l.city}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
