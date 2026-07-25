@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
-      { name: "description", content: "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!" },
+      { name: "description", content: "Fraser Valley Floors is a trusted Flooring Contractor offering residential & commercial flooring, epoxy coatings, and concrete resurfacing in Fraser Valley, BC." },
       { property: "og:title", content: "Flooring & Epoxy Coatings | Fraser Valley Floors" },
       { property: "og:description", content: "Fraser Valley flooring contractor for epoxy coatings, hardwood, garage floors, warehouse coatings, and residential flooring. Get a free quote." },
       { property: "og:url", content: "https://fraservalleyfloors.com" },
