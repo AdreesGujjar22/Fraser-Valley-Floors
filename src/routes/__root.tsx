@@ -148,9 +148,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-D8YJ6WSGHW');`,
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D8YJ6WSGHW');`,
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(localBusinessLd),
       },
     ],
   }),
@@ -179,10 +183,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
-      />
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">

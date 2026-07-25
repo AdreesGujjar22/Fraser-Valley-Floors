@@ -1,17 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/data/site";
 import { coatingServices, flooringServices } from "@/data/services";
 import { locations } from "@/data/locations";
 import { Logo } from "@/components/Logo";
-
-function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.14V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.74a8.16 8.16 0 0 0 4.77 1.52V6.81a4.85 4.85 0 0 1-1.84-.12z" />
-    </svg>
-  );
-}
 
 export function Footer() {
   return (
@@ -25,17 +17,6 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Fraser Valley's trusted source for premium flooring and concrete coatings. Licensed, insured, and guaranteed.
             </p>
-            <div className="mt-4 flex gap-3">
-              <a href={site.social.facebook} aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-md border border-border hover:border-primary hover:text-primary transition-colors">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href={site.social.instagram} aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-md border border-border hover:border-primary hover:text-primary transition-colors">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href={site.social.tiktok} aria-label="TikTok" className="grid h-9 w-9 place-items-center rounded-md border border-border hover:border-primary hover:text-primary transition-colors">
-                <TikTokIcon className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           <div>

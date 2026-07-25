@@ -10,9 +10,4 @@ export const site = {
   hours: [
     { day: "Available", time: "24 Hours, 7 Days a Week" },
   ],
-  social: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
-    tiktok: "https://tiktok.com",
-  },
 };

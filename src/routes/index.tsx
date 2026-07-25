@@ -269,7 +269,10 @@ function Home() {
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Get a Free Quote</div>
             <h2 className="font-display text-3xl font-black md:text-5xl">Get a Free Quote for Your Flooring Project</h2>
             <p className="mt-4 text-foreground/80">
-              Tell us about your project. We'll respond within one business day with a free, written estimate and a realistic timeline. Service information updated for {new Date().getFullYear()}.
+              Tell us about your project. We'll respond within one business day with a free, written estimate and a realistic timeline.
+            </p>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Last updated: {new Date().getFullYear()}
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex gap-2"><Users className="h-5 w-5 text-primary shrink-0" /> Free in-person or virtual consultation</li>
