@@ -52,7 +52,7 @@ We proudly serve the entire Fraser Valley and Lower Mainland, including:
 
 ## Contact
 
-**Phone:** (236) 878-3386  
+**Phone:** +1 (778) 562-5420  
 **Email:** info@fraservalleyfloors.com  
 **Hours:** Available 24/7
 

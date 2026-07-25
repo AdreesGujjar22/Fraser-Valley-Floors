@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
@@ -33,11 +34,10 @@ function LocationsIndex() {
       <section className="section-y">
         <div className="container-x grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((l) => (
-            <a
+            <Link
               key={l.slug}
-              href={`https://www.google.com/maps/search/${encodeURIComponent(l.address)}/@${l.lat},${l.lng},13z`}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/locations/$city"
+              params={{ city: l.slug }}
               className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-glow"
             >
               <div className="flex items-center gap-3">
@@ -48,9 +48,9 @@ function LocationsIndex() {
               </div>
               <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{l.blurb}</p>
               <div className="mt-4 flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-primary">
-                View on Google Maps <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                View {l.city} services <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
