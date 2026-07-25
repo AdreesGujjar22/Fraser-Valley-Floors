@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
