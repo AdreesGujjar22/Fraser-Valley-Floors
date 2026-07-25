@@ -142,16 +142,15 @@ function Home() {
             <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {locations.map((l) => (
                 <li key={l.slug}>
-                  <a
-                    href={`https://www.google.com/maps/search/${encodeURIComponent(l.address)}/@${l.lat},${l.lng},13z`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/locations/$city"
+                    params={{ city: l.slug }}
                     className="group flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
                   >
                     <MapPin className="h-4 w-4 text-primary" />
                     {l.city}
                     <ArrowRight className="ml-auto h-3 w-3 opacity-0 group-hover:opacity-100 transition" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
