@@ -14,8 +14,8 @@ export const Route = createFileRoute("/locations/$city")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [] };
-    const title = `Flooring & Epoxy Coatings in ${loaderData.city}, BC | Fraser Valley Floors`;
-    const desc = `Local flooring and concrete coating services in ${loaderData.city}, BC. Epoxy garage coatings, hardwood, vinyl plank and more. Free quotes.`;
+    const title = `${loaderData.headline} | Fraser Valley Floors`;
+    const desc = loaderData.metaDescription;
     return {
       meta: [
         { title },
@@ -45,7 +45,7 @@ function LocationDetail() {
     <>
       <PageHero
         eyebrow="Service Area"
-        title={`Flooring & Concrete Coatings in ${loc.city}, BC`}
+        title={loc.headline}
         subtitle={loc.blurb}
         crumbs={[
           { label: "Home", to: "/" },
@@ -59,7 +59,7 @@ function LocationDetail() {
         <div className="container-x">
           <div className="max-w-3xl">
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Local Expertise</div>
-            <h2 className="font-display text-2xl font-black md:text-3xl">Built for {loc.serviceFocus}</h2>
+            <h2 className="font-display text-2xl font-black md:text-3xl">{loc.serviceFocus} in {loc.city}</h2>
             <p className="mt-4 text-lg text-foreground/80">{loc.blurb}</p>
           </div>
         </div>

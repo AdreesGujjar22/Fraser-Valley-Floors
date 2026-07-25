@@ -2,6 +2,8 @@ export type Location = {
   slug: string;
   city: string;
   blurb: string;
+  headline: string;
+  metaDescription: string;
   serviceFocus: string;
   coatingDescription: string;
   flooringDescription: string;
@@ -17,6 +19,8 @@ export const locations: Location[] = [
     city: "Abbotsford",
     blurb:
       "From McCallum Road shops to Sumas Mountain estates, Abbotsford homeowners and businesses trust us for flooring and concrete coatings that handle Fraser Valley weather and daily use.",
+    headline: "Durable Garage and Farm Floors for Abbotsford Properties",
+    metaDescription: "Abbotsford garage floors, farm shop coatings, hardwood, vinyl plank, and commercial flooring installed for Fraser Valley homes and businesses.",
     serviceFocus: "Garage floors, family homes, and agricultural workspaces",
     coatingDescription:
       "Abbotsford garages and farm shops need coatings that stand up to mud, moisture, and constant vehicle traffic. We install broadcast-flake epoxy and fast-curing polyaspartic systems with slip-resistant finishes that are easy to clean.",
@@ -33,6 +37,8 @@ export const locations: Location[] = [
     city: "Surrey",
     blurb:
       "Whether it's a South Surrey custom home, a Newton warehouse, or a Cloverdale shop, we install premium flooring and concrete coatings across every Surrey neighbourhood.",
+    headline: "Polished Floors for Surrey Homes and Busy Commercial Spaces",
+    metaDescription: "Surrey flooring and floor coating specialists for South Surrey homes, Newton warehouses, Cloverdale shops, condos, and commercial properties.",
     serviceFocus: "Modern homes, retail spaces, and high-traffic commercial floors",
     coatingDescription:
       "Surrey properties range from new builds in South Surrey to busy commercial units in Newton and Cloverdale. We specify durable epoxy, polyaspartic, and polyurethane systems for clean presentation and dependable daily performance.",
@@ -49,6 +55,8 @@ export const locations: Location[] = [
     city: "Delta",
     blurb:
       "From Tsawwassen waterfront homes to Annacis Island industrial facilities, our team brings premium flooring solutions throughout Delta and the surrounding peninsula.",
+    headline: "Coastal-Ready Floors for Delta Homes and Industry",
+    metaDescription: "Delta flooring and concrete floor systems for Tsawwassen homes, Ladner businesses, warehouses, loading areas, and industrial facilities.",
     serviceFocus: "Waterfront homes, warehouses, and industrial facilities",
     coatingDescription:
       "Delta's coastal air and industrial traffic call for surfaces built for demanding conditions. We prepare concrete thoroughly and install chemical-resistant coating systems for garages, warehouses, loading areas, and service bays.",
@@ -65,6 +73,8 @@ export const locations: Location[] = [
     city: "Langley",
     blurb:
       "Langley City condos, Walnut Grove garages, and Aldergrove acreages — we deliver beautifully finished floors and durable concrete coatings throughout the Township and City of Langley.",
+    headline: "Refined Flooring for Langley Homes, Garages, and Shops",
+    metaDescription: "Langley flooring and garage coating installations for condos, Walnut Grove homes, Aldergrove acreages, shops, and new construction.",
     serviceFocus: "New construction, acreage properties, and growing businesses",
     coatingDescription:
       "Langley homeowners use their garages, patios, and shops hard. We install decorative flake, quartz, and solid-colour coatings that create a clean finished surface without sacrificing durability or easy maintenance.",
@@ -81,6 +91,8 @@ export const locations: Location[] = [
     city: "Chilliwack",
     blurb:
       "Serving Chilliwack, Sardis, and Promontory with garage epoxy, hardwood, vinyl plank, and commercial flooring — installed by locals who know the area.",
+    headline: "Practical, Long-Lasting Floors for Chilliwack Life",
+    metaDescription: "Chilliwack garage epoxy, hardwood, vinyl plank, and commercial flooring for homes and businesses in Sardis, Promontory, and the valley.",
     serviceFocus: "Garages, family renovations, and valley businesses",
     coatingDescription:
       "Chilliwack garage and shop floors see everything from wet-weather vehicles to weekend projects. Our epoxy and polyaspartic systems create a seamless, stain-resistant surface with a finish chosen to match your space.",
@@ -97,6 +109,8 @@ export const locations: Location[] = [
     city: "Maple Ridge",
     blurb:
       "From Silver Valley to downtown Maple Ridge, we handle everything from luxury hardwood installations to heavy-duty shop coatings.",
+    headline: "High-Performance Floors for Maple Ridge Homes and Workshops",
+    metaDescription: "Maple Ridge hardwood, vinyl plank, garage epoxy, and workshop floor coatings for Silver Valley homes and local businesses.",
     serviceFocus: "Luxury interiors, garages, and tradesperson shops",
     coatingDescription:
       "Maple Ridge shop owners and homeowners need floors that look good and keep working. We install heavy-duty coatings for workshops and garages, including flake and polyaspartic finishes designed for frequent use.",
@@ -113,6 +127,8 @@ export const locations: Location[] = [
     city: "Mission",
     blurb:
       "Mission homeowners and business owners count on us for clean, durable, beautifully finished flooring and concrete coating projects of every size.",
+    headline: "Clean, Comfortable Floors for Mission Renovations",
+    metaDescription: "Mission flooring and concrete coating services for home renovations, garages, patios, river-view properties, and local businesses.",
     serviceFocus: "River-view homes, renovations, and local businesses",
     coatingDescription:
       "Mission garages, patios, and commercial spaces benefit from coatings that resist moisture, tire marks, and everyday wear. We transform prepared concrete with durable finishes that are simple to sweep, wash, and maintain.",
