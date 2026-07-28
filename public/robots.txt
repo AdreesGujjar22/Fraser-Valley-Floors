@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fraservalleyfloors.com/sitemap.xml
+Sitemap: https://www.fraservalleyfloors.com/sitemap.xml

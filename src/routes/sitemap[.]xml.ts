@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 
-const BASE_URL = "https://fraservalleyfloors.com";
+const BASE_URL = "https://www.fraservalleyfloors.com";
 
 interface SitemapEntry {
   path: string;

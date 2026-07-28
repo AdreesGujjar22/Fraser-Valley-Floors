@@ -1,5 +1,5 @@
 export const site = {
-  url: "https://fraservalleyfloors.com",
+  url: "https://www.fraservalleyfloors.com",
   name: "Fraser Valley Floors",
   tagline: "Fraser Valley's Premier Flooring & Concrete Coating Experts",
   phone: "(778) 562-5420",
