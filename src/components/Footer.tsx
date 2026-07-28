@@ -57,26 +57,29 @@ export function Footer() {
 
           <div itemScope itemType="https://schema.org/LocalBusiness">
             <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-primary">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href={site.phoneHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors">
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span itemProp="telephone">{site.phone}</span>
-                </a>
-              </li>
-              <li>
-                <a href={site.emailHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors break-all">
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span itemProp="email">{site.email}</span>
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                  <span itemProp="addressLocality">Fraser Valley</span>, <span itemProp="addressRegion">British Columbia</span>, <span itemProp="addressCountry">Canada</span>
-                </div>
-              </li>
-            </ul>
+            <address className="not-italic">
+              <p className="mb-3 font-semibold text-foreground" itemProp="name">{site.name}</p>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a href={site.phoneHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span itemProp="telephone">{site.phone}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={site.emailHref} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors break-all">
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span itemProp="email">{site.email}</span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                    <span itemProp="addressLocality">Fraser Valley</span>, <span itemProp="addressRegion">British Columbia</span>, <span itemProp="addressCountry">Canada</span>
+                  </div>
+                </li>
+              </ul>
+            </address>
             <div className="mt-6">
               <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Hours</h4>
               <ul className="space-y-1 text-xs text-muted-foreground">

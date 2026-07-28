@@ -123,6 +123,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!",
       },
       { name: "author", content: site.name },
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
       { property: "og:image", content: `${site.url}/Fraser-Valley-Floors.png` },
@@ -152,10 +154,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 	gtag('js', new Date());
 	gtag('config', 'G-D8YJ6WSGHW');`,
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(localBusinessLd),
-      },
     ],
   }),
   shellComponent: RootShell,
@@ -169,6 +167,13 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" className="dark">
       <head>
         <HeadContent />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href={`${site.url}/`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+        />
       </head>
       <body>
         {children}
