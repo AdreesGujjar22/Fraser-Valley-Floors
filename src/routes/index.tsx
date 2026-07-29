@@ -122,7 +122,7 @@ function Home() {
             <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">What We Do</div>
             <h2 className="font-display text-3xl font-black md:text-5xl">Hardwood, Vinyl, and Complete Flooring Solutions</h2>
             <p className="mt-4 text-foreground/80">
-              Two specialised divisions, one trusted team. From a one-day garage epoxy to a whole-home hardwood install — we do it all, and we do it right.
+              Two specialised divisions, one trusted team. From a one-day <Link to="/services/$slug" params={{ slug: "garage-coatings" }}>garage epoxy</Link> to a <Link to="/services/$slug" params={{ slug: "hardwood-flooring" }}>whole-home hardwood install</Link> — we do it all, and we do it right.
             </p>
           </div>
 

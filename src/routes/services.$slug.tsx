@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { getService, services, type Service } from "@/data/services";
+import { locations } from "@/data/locations";
 import { site } from "@/data/site";
 
 import g1 from "@/assets/gallery-1.jpg";
@@ -52,6 +53,72 @@ const galleryByCategory: Record<string, string[]> = {
 
 const serviceUrl = (slug: string) => `${site.url}/services/${slug}`;
 const socialImageUrl = `${site.url}/Fraser-Valley-Floors.png`;
+
+const applicationLinks: Record<string, string> = {
+  "Residential Garages": "garage-coatings",
+  "Home Workshops": "shops-coatings",
+  "Home Gyms": "studio-coatings",
+  "Showrooms": "studio-coatings",
+  "Commercial Kitchens": "food-safe-coatings",
+  "Retail Spaces": "shops-coatings",
+  "Distribution Centres": "warehouse-coatings",
+  "Manufacturing Plants": "warehouse-coatings",
+  "Storage Warehouses": "warehouse-coatings",
+  "Loading Bays": "warehouse-coatings",
+  "Industrial Facilities": "warehouse-coatings",
+  "Pool Decks": "patio-coatings",
+  "Outdoor Kitchens": "patio-coatings",
+  "Covered Porches": "patio-coatings",
+  "Entryways": "decorative-concrete",
+  "Auto Showrooms": "polyaspartic-coatings",
+  "Retail Floors": "vinyl-flooring",
+  "Commercial Entryways": "polyurethane-coatings",
+  "Food Processing Plants": "food-safe-coatings",
+  "Chemical Storage Rooms": "polyurethane-coatings",
+  "Parking Structures": "polyurethane-coatings",
+  "Bakeries": "food-safe-coatings",
+  "Breweries": "food-safe-coatings",
+  "Meat & Seafood Facilities": "food-safe-coatings",
+  "Dance Studios": "studio-coatings",
+  "Fitness & Yoga Studios": "studio-coatings",
+  "Photography Studios": "studio-coatings",
+  "Art Studios": "studio-coatings",
+  "Recording Studios": "studio-coatings",
+  "Auto Repair Shops": "shops-coatings",
+  "Retail Stores": "shops-coatings",
+  "Small Manufacturing Shops": "shops-coatings",
+  "Tool & Equipment Shops": "shops-coatings",
+  "Service Bays": "shops-coatings",
+  Kitchens: "vinyl-flooring",
+  Bathrooms: "vinyl-flooring",
+  Basements: "carpet-tiles",
+  "Living Rooms": "hardwood-flooring",
+  "Rental Properties": "laminate-flooring",
+  Bedrooms: "hardwood-flooring",
+  "Home Offices": "carpet-tiles",
+  Hallways: "laminate-flooring",
+  "Dining Rooms": "hardwood-flooring",
+  "Home Theaters": "carpet-tiles",
+  Playrooms: "carpet-tiles",
+  Staircases: "custom-stairs",
+  Landings: "custom-stairs",
+  "Hallway Transitions": "custom-stairs",
+  "Basement Stairs": "custom-stairs",
+};
+
+const renderLocationCopy = (copy: string) => {
+  const names = locations.map((location) => location.city).join("|");
+  return copy.split(new RegExp(`(${names})`)).map((part, index) => {
+    const location = locations.find((item) => item.city === part);
+    return location ? (
+      <Link key={`${part}-${index}`} to="/locations/$city" params={{ city: location.slug }} className="text-primary hover:underline">
+        {part}
+      </Link>
+    ) : (
+      part
+    );
+  });
+};
 
 const getSeoContent = (service: Service) => {
   const applications = service.applications.slice(0, 3).join(", ");
@@ -180,7 +247,7 @@ function ServiceDetail() {
 
             <section className="mt-10 rounded-lg border border-border bg-surface/40 p-5">
               <h3 className="font-display text-xl font-bold">{seo.localHeading}</h3>
-              <p className="mt-3 text-foreground/85 leading-relaxed">{seo.localCopy}</p>
+              <p className="mt-3 text-foreground/85 leading-relaxed">{renderLocationCopy(seo.localCopy)}</p>
             </section>
 
             <h3 className="mt-12 font-display text-xl font-bold">Key Benefits</h3>
@@ -200,7 +267,13 @@ function ServiceDetail() {
                   key={a}
                   className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
                 >
-                  {a}
+                  {applicationLinks[a] && applicationLinks[a] !== service.slug ? (
+                    <Link to="/services/$slug" params={{ slug: applicationLinks[a] }} className="hover:underline">
+                      {a}
+                    </Link>
+                  ) : (
+                    a
+                  )}
                 </span>
               ))}
             </div>

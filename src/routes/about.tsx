@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
 import aboutImg from "@/assets/about-team.jpg";
@@ -54,7 +55,7 @@ function About() {
                 Fraser Valley Floors started in a single garage with a diamond grinder, a few buckets of epoxy, and a stubborn belief that the Valley deserved better. A decade later, we're still that same crew — bigger trucks, more equipment, but the same hands-on approach to every job.
               </p>
               <p>
-                We specialise in two things and we do them both extremely well: concrete coatings and floor installation. From a one-day polyaspartic garage to a multi-room hardwood renovation, you'll work with the same in-house team from quote to walk-through.
+                We specialise in two things and we do them both extremely well: <Link to="/services">concrete coatings</Link> and <Link to="/services">floor installation</Link>. From a one-day <Link to="/services/$slug" params={{ slug: "polyaspartic-coatings" }}>polyaspartic garage</Link> to a multi-room <Link to="/services/$slug" params={{ slug: "hardwood-flooring" }}>hardwood renovation</Link>, you'll work with the same in-house team from quote to walk-through.
               </p>
               <p>
                 We're fully licensed, fully insured, and proudly local. When you call, you'll get one of us — not a call centre.
