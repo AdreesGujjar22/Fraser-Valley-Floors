@@ -18,6 +18,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as LocationsIndexRouteImport } from './routes/locations.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as LocationsCityRouteImport } from './routes/locations.$city'
 
@@ -66,6 +67,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const LocationsIndexRoute = LocationsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocationsRoute,
+} as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/locations/$city': typeof LocationsCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/locations/': typeof LocationsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -95,11 +102,11 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
-  '/locations': typeof LocationsRouteWithChildren
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/locations/$city': typeof LocationsCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/locations': typeof LocationsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -114,6 +121,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/locations/$city': typeof LocationsCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/locations/': typeof LocationsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -129,6 +137,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/locations/$city'
     | '/services/$slug'
+    | '/locations/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -136,11 +145,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
-    | '/locations'
     | '/projects'
     | '/sitemap.xml'
     | '/locations/$city'
     | '/services/$slug'
+    | '/locations'
     | '/services'
   id:
     | '__root__'
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/locations/$city'
     | '/services/$slug'
+    | '/locations/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -233,6 +243,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/locations/': {
+      id: '/locations/'
+      path: '/'
+      fullPath: '/locations/'
+      preLoaderRoute: typeof LocationsIndexRouteImport
+      parentRoute: typeof LocationsRoute
+    }
     '/services/$slug': {
       id: '/services/$slug'
       path: '/$slug'
@@ -252,10 +269,12 @@ declare module '@tanstack/react-router' {
 
 interface LocationsRouteChildren {
   LocationsCityRoute: typeof LocationsCityRoute
+  LocationsIndexRoute: typeof LocationsIndexRoute
 }
 
 const LocationsRouteChildren: LocationsRouteChildren = {
   LocationsCityRoute: LocationsCityRoute,
+  LocationsIndexRoute: LocationsIndexRoute,
 }
 
 const LocationsRouteWithChildren = LocationsRoute._addFileChildren(

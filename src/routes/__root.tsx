@@ -87,6 +87,7 @@ const localBusinessLd = {
   telephone: site.phone,
   email: site.email,
   url: site.url,
+  priceRange: "$$",
   image: `${site.url}/Fraser-Valley-Floors.png`,
   areaServed: [
     "Abbotsford", "Surrey", "Delta", "Langley", "Chilliwack", "Maple Ridge", "Mission",
@@ -167,9 +168,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" className="dark">
       <head>
         <HeadContent />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <link rel="canonical" href={`${site.url}/`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
