@@ -62,7 +62,9 @@ const getSeoContent = (service: Service) => {
     description: service.metaDescription,
     keywords: `${service.name}, ${serviceType} Fraser Valley, ${serviceType} Abbotsford, ${serviceType} Langley, ${applications}`,
     localHeading: `${service.name} Installation Across the Fraser Valley`,
-    localCopy: `${site.name} provides professional ${service.name.toLowerCase()} for ${applications} throughout Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta. Every project starts with an on-site assessment and a clear written estimate.`,
+    localCopy:
+      service.localCopy ??
+      `${site.name} provides professional ${service.name.toLowerCase()} for ${applications} throughout Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta. Every project starts with an on-site assessment and a clear written estimate.`,
   };
 };
 

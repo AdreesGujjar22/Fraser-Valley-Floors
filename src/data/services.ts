@@ -1,3 +1,5 @@
+import { serviceContent } from "@/data/service-content";
+
 export type Service = {
   slug: string;
   name: string;
@@ -6,6 +8,7 @@ export type Service = {
   metaTitle: string;
   metaDescription: string;
   description: string[];
+  localCopy?: string;
   benefits: string[];
   applications: string[];
   faqs: { q: string; a: string }[];
@@ -30,7 +33,7 @@ const sharedFaqs = (name: string) => [
   },
 ];
 
-export const services: Service[] = [
+const baseServices: Service[] = [
   // Concrete Coating
   {
     slug: "epoxy-coatings",
@@ -392,6 +395,21 @@ export const services: Service[] = [
     faqs: sharedFaqs("Floor Demolition"),
   },
 ];
+
+export const services: Service[] = baseServices.map((service) => {
+  const content = serviceContent[service.slug];
+  return content
+    ? {
+        ...service,
+        short: content.tagline,
+        description: content.description,
+        localCopy: content.localCopy,
+        benefits: content.benefits,
+        applications: content.applications,
+        faqs: content.faqs,
+      }
+    : service;
+});
 
 export const coatingServices = services.filter((s) => s.category === "coating");
 export const flooringServices = services.filter((s) => s.category === "flooring");
