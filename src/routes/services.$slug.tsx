@@ -172,7 +172,7 @@ const getSeoContent = (service: Service) => {
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    keywords: `${service.name}, ${serviceType} Fraser Valley, ${serviceType} Abbotsford, ${serviceType} Langley, ${applications}`,
+    keywords: `${service.name}, ${serviceType} Langley, BC, ${serviceType} Abbotsford, ${serviceType} Langley, ${applications}`,
   };
 };
 

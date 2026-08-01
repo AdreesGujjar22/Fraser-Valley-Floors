@@ -18,19 +18,19 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Browse our portfolio of garage epoxy, warehouse coatings, patio coatings, hardwood and vinyl installations across the Fraser Valley.",
+          "Browse our portfolio of garage epoxy, warehouse coatings, patio coatings, hardwood and vinyl installations in Langley, BC.",
       },
       { property: "og:title", content: "Project Portfolio | Fraser Valley Floors" },
       {
         property: "og:description",
-        content: "Real flooring and concrete coating projects from across the Fraser Valley.",
+        content: "Real flooring and concrete coating projects from Langley, BC.",
       },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/projects" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Project Portfolio | Fraser Valley Floors" },
       {
         name: "twitter:description",
-        content: "Real flooring and concrete coating projects from across the Fraser Valley.",
+        content: "Real flooring and concrete coating projects from Langley, BC.",
       },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/projects" }],

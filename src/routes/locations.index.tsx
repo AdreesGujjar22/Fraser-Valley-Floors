@@ -17,14 +17,14 @@ export const Route = createFileRoute("/locations/")({
       { property: "og:title", content: "Service Areas | Fraser Valley Floors" },
       {
         property: "og:description",
-        content: "Serving the entire Fraser Valley with premium flooring and coatings.",
+        content: "Serving Langley, BC with premium flooring and coatings.",
       },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/locations" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Service Areas | Fraser Valley Floors" },
       {
         name: "twitter:description",
-        content: "Serving the entire Fraser Valley with premium flooring and coatings.",
+        content: "Serving Langley, BC with premium flooring and coatings.",
       },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/locations" }],

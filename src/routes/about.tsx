@@ -11,13 +11,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Locally owned and operated. Meet the team behind Fraser Valley's most trusted flooring and concrete coating company.",
+          "Locally owned and operated. Meet the team behind Langley, BC's most trusted flooring and concrete coating company.",
       },
       { property: "og:title", content: "About Fraser Valley Floors" },
       {
         property: "og:description",
         content:
-          "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade.",
+          "Family-owned, fully insured, and built on craftsmanship. Serving Langley, BC for over a decade.",
       },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/about" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "twitter:description",
         content:
-          "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade.",
+          "Family-owned, fully insured, and built on craftsmanship. Serving Langley, BC for over a decade.",
       },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/about" }],
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/about")({
           "@type": "AboutPage",
           name: "About Fraser Valley Floors",
           description:
-            "Locally owned and operated flooring and epoxy coating contractor in Fraser Valley, BC.",
+            "Locally owned and operated flooring and epoxy coating contractor in Langley, BC.",
           url: "https://www.fraservalleyfloors.com/about",
         }),
       },
