@@ -19,14 +19,14 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Fraser Valley Floors" },
       {
         property: "og:description",
-        content: "Free quotes. Honest pricing. Fast response across the Fraser Valley.",
+        content: "Free quotes. Honest pricing. Fast response in Langley, BC.",
       },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/contact" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Contact Fraser Valley Floors" },
       {
         name: "twitter:description",
-        content: "Free quotes. Honest pricing. Fast response across the Fraser Valley.",
+        content: "Free quotes. Honest pricing. Fast response in Langley, BC.",
       },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/contact" }],
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/contact")({
           "@type": "ContactPage",
           name: "Contact Fraser Valley Floors",
           description:
-            "Get a free quote for epoxy coatings or flooring installation in Fraser Valley, BC.",
+            "Get a free quote for epoxy coatings or flooring installation in Langley, BC.",
           url: "https://www.fraservalleyfloors.com/contact",
         }),
       },

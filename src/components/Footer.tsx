@@ -101,7 +101,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-start gap-2 text-muted-foreground">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <div>Fraser Valley, British Columbia, Canada</div>
+                  <div>{site.address}</div>
                 </li>
               </ul>
             </address>

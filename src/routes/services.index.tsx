@@ -12,13 +12,13 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Complete flooring and concrete coating services: epoxy, polyaspartic, garage coatings, hardwood, vinyl plank, laminate, custom stairs, and more in Langley & Fraser Valley.",
+          "Complete flooring and concrete coating services: epoxy, polyaspartic, garage coatings, hardwood, vinyl plank, laminate, custom stairs, and more in Langley, BC.",
       },
       { property: "og:title", content: "Our Services | Fraser Valley Floors" },
       {
         property: "og:description",
         content:
-          "Two divisions, one trusted team — concrete coatings and floor installation across Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
+          "Two divisions, one trusted team — concrete coatings and floor installation in Langley, BC.",
       },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/services" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/services/")({
       {
         name: "twitter:description",
         content:
-          "Two divisions, one trusted team — concrete coatings and floor installation across the Fraser Valley.",
+          "Two divisions, one trusted team — concrete coatings and floor installation in Langley, BC.",
       },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/services" }],

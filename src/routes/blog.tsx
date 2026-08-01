@@ -15,7 +15,7 @@ export const Route = createFileRoute("/blog")({
       {
         name: "description",
         content:
-          "Practical guides on epoxy garage coatings, vinyl plank, hardwood care and more — from Fraser Valley's flooring experts.",
+          "Practical guides on epoxy garage coatings, vinyl plank, hardwood care and more — from Langley, BC's flooring experts.",
       },
       { property: "og:title", content: "Blog | Fraser Valley Floors" },
       {
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/blog")({
           "@type": "Blog",
           name: "Fraser Valley Floors Blog",
           description:
-            "Flooring and concrete coating tips, guides, and care advice from Fraser Valley experts.",
+            "Flooring and concrete coating tips, guides, and care advice from Langley, BC experts.",
           url: "https://www.fraservalleyfloors.com/blog",
         }),
       },

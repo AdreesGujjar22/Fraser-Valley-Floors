@@ -28,7 +28,7 @@ const baseServices: Omit<Service, "h1" | "badge" | "about" | "serving">[] = [
     short: "Durable, glossy epoxy systems for garages, shops & commercial floors.",
     metaTitle: "Epoxy Coatings in Langley, BC | Fraser Valley Floors",
     metaDescription:
-      "Our epoxy coatings in Langley, BC turn tired concrete into a hard-wearing, chemical-resistant surface. Serving Abbotsford, Surrey, Langley & Fraser Valley.",
+      "Our epoxy coatings in Langley, BC turn tired concrete into a hard-wearing, chemical-resistant surface. Serving Langley, BC.",
     description: [
       "Our epoxy coatings in Langley, BC turn tired concrete into a hard-wearing, chemical-resistant surface — from solid colours to full metallic and flake finishes, mixed and applied on-site.",
     ],

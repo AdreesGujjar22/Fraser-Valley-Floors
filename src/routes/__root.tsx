@@ -85,7 +85,7 @@ const localBusinessLd = {
       "@id": `${site.url}/#organization`,
       name: site.name,
       description:
-        "Residential and commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC.",
+        "Residential and commercial flooring, epoxy floor coatings, and concrete resurfacing in Langley, BC.",
       telephone: site.phone,
       email: site.email,
       url: site.url,
@@ -108,8 +108,10 @@ const localBusinessLd = {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Abbotsford",
+        streetAddress: "20253 72 Ave",
+        addressLocality: "Langley",
         addressRegion: "BC",
+        postalCode: "V2Y 1S8",
         addressCountry: "CA",
       },
       contactPoint: {
@@ -167,7 +169,7 @@ const localBusinessLd = {
       url: site.url,
       name: site.name,
       alternateName: "Fraser Valley Floors Ltd.",
-      description: "Fraser Valley's premier flooring contractor and concrete coating specialist.",
+      description: "Langley, BC's premier flooring contractor and concrete coating specialist.",
       publisher: {
         "@id": `${site.url}/#organization`,
       },
@@ -190,7 +192,7 @@ const localBusinessLd = {
           position: 2,
           name: "Projects & Portfolio",
           description:
-            "Browse completed epoxy floor coating and custom flooring installations across Fraser Valley.",
+            "Browse completed epoxy floor coating and custom flooring installations in Langley, BC.",
           url: `${site.url}/projects`,
         },
         {
@@ -198,7 +200,7 @@ const localBusinessLd = {
           position: 3,
           name: "About Fraser Valley Floors",
           description:
-            "Learn about Fraser Valley's premier flooring contractor and concrete coating specialist.",
+            "Learn about Langley, BC's premier flooring contractor and concrete coating specialist.",
           url: `${site.url}/about`,
         },
         {
@@ -239,7 +241,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Fraser Valley Floors offers residential & commercial flooring, epoxy garage coatings, polyaspartic systems, and hardwood installation across Fraser Valley, BC. Get a free quote today!",
+          "Fraser Valley Floors offers residential & commercial flooring, epoxy garage coatings, polyaspartic systems, and hardwood installation in Langley, BC. Get a free quote today!",
       },
       { name: "author", content: site.name },
       {
@@ -248,7 +250,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "googlebot", content: "index, follow" },
       { name: "geo.region", content: "CA-BC" },
-      { name: "geo.placename", content: "Fraser Valley, British Columbia" },
+      { name: "geo.placename", content: "Langley, BC" },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_CA" },
