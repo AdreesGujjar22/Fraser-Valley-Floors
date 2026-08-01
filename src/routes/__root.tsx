@@ -108,8 +108,10 @@ const localBusinessLd = {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Abbotsford",
+        streetAddress: "20253 72 Ave",
+        addressLocality: "Langley",
         addressRegion: "BC",
+        postalCode: "V2Y 1S8",
         addressCountry: "CA",
       },
       contactPoint: {

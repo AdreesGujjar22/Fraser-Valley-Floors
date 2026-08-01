@@ -288,7 +288,7 @@ function Home() {
         eyebrow="Fraser Valley, BC"
         title={
           <>
-            Flooring Contractor in Langley<span className="text-gradient-accent">BC — Garage Coatings, </span>Hardwood & Vinyl Flooring Experts
+            Reliable<span className="text-gradient-accent"> Flooring Contractor </span>in Langley, BC 
           </>
         }
         subtitle="Residential & commercial flooring installation, epoxy floor coatings, and concrete resurfacing - built to last, finished to impress."
