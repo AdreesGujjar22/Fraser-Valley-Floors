@@ -288,7 +288,7 @@ function Home() {
         eyebrow="Fraser Valley, BC"
         title={
           <>
-            Fraser Valley's <span className="text-gradient-accent">Flooring Contractor</span><br />
+            Fraser Valley's <span className="text-gradient-accent">Flooring Contractor</span>
             Epoxy Coatings & Concrete Experts
           </>
         }
