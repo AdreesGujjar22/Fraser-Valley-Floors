@@ -1,30 +1,29 @@
 export type ServiceContent = {
+  h1: string;
+  badge: string;
   tagline: string;
-  description: string[];
-  localHeading?: string;
-  localCopy: string;
+  about: string;
+  serving: string;
   benefits: string[];
   applications: string[];
   faqs: { q: string; a: string }[];
 };
 
-const locations = "Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta";
-
 export const serviceContent: Record<string, ServiceContent> = {
   "epoxy-coatings": {
-    tagline: "Durable, glossy epoxy systems for garages, shops & commercial floors.",
-    description: [
-      "Our high-performance epoxy coatings transform tired concrete into a stunning, hard-wearing surface that resists chemicals, abrasion, and impact. Engineered for Fraser Valley's climate, our systems bond tightly to properly prepared concrete for decades of service.",
-      "Whether you want a sleek solid color, a metallic finish, or a decorative full-flake system, we mix and broadcast on-site to your exact specifications.",
-    ],
-    localHeading: "Epoxy Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors provides professional epoxy coatings for residential garages, workshops, and showrooms throughout ${locations}. Every project starts with an on-site assessment and a clear written estimate.`,
+    h1: "Epoxy Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Durable, glossy epoxy systems for garages, shops & commercial floors. Built to resist chemicals, stains, and daily wear for years to come.",
+    about:
+      "Our epoxy coatings in Langley, BC turn tired concrete into a hard-wearing, chemical-resistant surface — from solid colours to full metallic and flake finishes, mixed and applied on-site.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
       "Chemical, oil and stain resistant",
       "High-gloss, easy-to-clean finish",
       "Slip-resistant texture options",
-      "Bonded to professionally prepared concrete",
-      "Backed by manufacturer + workmanship warranty",
+      "Bonded to prepared concrete",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Residential Garages",
@@ -35,641 +34,661 @@ export const serviceContent: Record<string, ServiceContent> = {
     ],
     faqs: [
       {
-        q: "How long does an epoxy coatings installation take?",
-        a: "Most residential garages are completed in 1–2 days, while larger commercial spaces typically take 3–5 days depending on square footage and surface prep required.",
-      },
-      {
-        q: "Do you offer warranties on epoxy coatings?",
-        a: "Yes. Every epoxy coatings project comes with both a manufacturer warranty on materials and a workmanship warranty from our installation team.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, we install epoxy coatings across ${locations}.`,
+        q: "How long does it take?",
+        a: "Most jobs finish in a single day.",
       },
       {
         q: "How do I get a quote?",
-        a: "Fill out our free quote form or call us directly — we respond within one business day with a written estimate.",
+        a: "Fill our form or call — free written estimate within one business day.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes, manufacturer + workmanship warranty.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "garage-coatings": {
-    tagline: "Premium polyaspartic and epoxy systems built for daily abuse.",
-    description: [
-      "Your garage floor takes a beating from vehicle traffic, dropped tools, road salt, and oil spills. Our garage coating systems combine industrial-strength polyaspartic or epoxy resins with decorative flake broadcasts to create a floor that looks showroom-ready and holds up to years of daily use.",
-      "We tailor each system to how you actually use your garage — whether it's parking, a home gym, or a full workshop — so the coating performs exactly where you need it most.",
-    ],
-    localHeading: "Garage Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs garage coatings for homeowners throughout ${locations}. Every job includes proper diamond grinding, crack repair, and a full moisture assessment before coating.`,
+    h1: "Garage Floor Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Premium polyaspartic and epoxy systems built for daily abuse. Turn your garage into a clean, showroom-ready space in as little as one day.",
+    about:
+      "Our garage floor coatings in Langley, BC turn dusty concrete into a durable, showroom-ready floor built to resist hot tires, oil, and daily wear.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Withstands hot tires and heavy vehicle traffic",
-      "Resists road salt, oil, and antifreeze stains",
-      "Fast-curing polyaspartic options (ready in 24 hours)",
-      "Decorative flake and color-flake finishes available",
-      "Backed by manufacturer + workmanship warranty",
+      "Chip and peel-resistant",
+      "Same-day installation",
+      "Hot-tire and oil-stain resistant",
+      "Wide range of finishes",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Residential Garages",
-      "Home Workshops",
-      "Home Gyms",
-      "Multi-Car Garages",
+      "Detached Garages",
       "Carports",
+      "Home Workshops",
+      "Multi-Car Garages",
     ],
     faqs: [
       {
-        q: "How long does a garage coating installation take?",
-        a: "Most single or double garages are completed in 1–2 days; polyaspartic systems can often be walked on the same day.",
-      },
-      {
-        q: "Do you offer warranties on garage coatings?",
-        a: "Yes, all garage coatings include manufacturer material warranties plus our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, we cover ${locations}.`,
+        q: "How long does it take?",
+        a: "Usually a single day.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free written estimate through our quote form or by phone — we respond within one business day.",
+        a: "Call or fill our online form for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes, including Langley and nearby communities.",
       },
     ],
   },
   "warehouse-coatings": {
-    tagline: "Heavy-duty industrial flooring for warehouses & distribution centres.",
-    description: [
-      "Warehouse floors face forklift traffic, pallet racking, chemical exposure, and constant foot and equipment movement. Our warehouse coating systems use commercial-grade epoxy and polyaspartic resins engineered for heavy industrial loads, with options for anti-static, chemical-resistant, and high-traffic line-marking finishes.",
-      "We work around your operational schedule, offering phased installations and rapid-cure systems to minimize downtime for your business.",
-    ],
-    localHeading: "Warehouse Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors serves distribution centres, manufacturing facilities, and warehouses throughout ${locations}, with on-site assessments and detailed project timelines.`,
+    h1: "Warehouse Floor Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Heavy-duty industrial flooring for warehouses & distribution centres. Engineered to handle forklift traffic and constant daily use.",
+    about:
+      "Our warehouse floor coatings in Langley, BC are built for forklift traffic, heavy loads, and chemical exposure, with slip-resistant finish options for added safety.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Engineered for forklift and heavy equipment traffic",
-      "Chemical, oil, and abrasion resistant",
-      "Line-marking and safety zone striping available",
-      "Fast-cure options to reduce facility downtime",
-      "Backed by manufacturer + workmanship warranty",
+      "Handles heavy traffic",
+      "Chemical and abrasion resistant",
+      "Slip-resistant options",
+      "Minimal downtime scheduling",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
+      "Warehouses",
       "Distribution Centres",
-      "Manufacturing Plants",
-      "Storage Warehouses",
+      "Manufacturing Facilities",
       "Loading Bays",
-      "Industrial Facilities",
+      "Storage Areas",
     ],
     faqs: [
       {
-        q: "How long does a warehouse coating installation take?",
-        a: "Timelines depend on square footage, but most warehouse projects run 3–7 days; we offer phased scheduling to keep parts of your facility operational.",
-      },
-      {
-        q: "Do you offer warranties on warehouse coatings?",
-        a: "Yes, warehouse coatings include manufacturer warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "Scheduled in phases to minimize downtime.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for an on-site assessment and free written estimate — we typically respond within one business day.",
+        a: "Contact us with your facility size for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "patio-coatings": {
-    tagline: "UV-stable decorative coatings that turn patios into outdoor living rooms.",
-    description: [
-      "Concrete patios crack, stain, and fade under BC's rain and sun. Our patio coating systems use UV-stable polyaspartic and polyurethane resins that resist yellowing, moisture intrusion, and slipping — while decorative flake and color options give your outdoor space a finished, elevated look.",
-      "Because these systems cure quickly and resist water, they're ideal for our region's wet winters and sunny summers alike.",
-    ],
-    localHeading: "Patio Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs patio coatings for homeowners across ${locations}, with slip-resistant textures suited to outdoor use.`,
+    h1: "Patio Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "UV-stable decorative coatings that turn patios into outdoor living rooms. Built to handle rain, sun, and everyday wear year-round.",
+    about:
+      "Our patio coatings in Langley, BC upgrade cracked concrete into a slip-resistant, low-maintenance surface built to handle rain, temperature swings, and UV exposure.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "UV-stable, won't yellow or fade in sunlight",
-      "Slip-resistant texture for wet conditions",
-      "Resists moisture intrusion and cracking",
-      "Fast-curing, weather-tolerant application",
-      "Backed by manufacturer + workmanship warranty",
+      "UV-stable, fade-resistant",
+      "Slip-resistant texture options",
+      "Crack repair included",
+      "Wide range of finishes",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Backyard Patios",
       "Pool Decks",
-      "Outdoor Kitchens",
-      "Covered Porches",
+      "Covered Outdoor Areas",
       "Entryways",
+      "Walkways",
     ],
     faqs: [
       {
-        q: "How long does a patio coating installation take?",
-        a: "Most residential patios are completed in 1–2 days, weather permitting.",
-      },
-      {
-        q: "Do you offer warranties on patio coatings?",
-        a: "Yes, patio coatings come with manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on size.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free written estimate through our quote form — we respond within one business day.",
+        a: "Submit our form or call for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "polyaspartic-coatings": {
-    tagline: "Fast-curing, UV-stable coatings for garages, showrooms & industrial floors.",
-    description: [
-      "Polyaspartic coatings are one of the most advanced concrete coating technologies available — curing in hours instead of days, resisting UV fading, and standing up to extreme abrasion. They're ideal for homeowners and businesses who need a durable floor without long downtime.",
-      "Unlike traditional epoxy, polyaspartic systems can be applied in a wider range of temperatures, making them a reliable option year-round in the Fraser Valley climate.",
-    ],
-    localHeading: "Polyaspartic Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs polyaspartic coatings for residential garages, commercial showrooms, and industrial spaces throughout ${locations}.`,
+    h1: "Polyaspartic Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Fast-curing, UV-stable coatings for garages, patios & driveways. Get a tough, long-lasting finish that's ready sooner than standard coatings.",
+    about:
+      "Our polyaspartic coatings in Langley, BC cure faster than standard epoxy and resist UV yellowing — a strong choice for garages, patios, and exposed surfaces.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Cures in hours — often ready to walk on same day",
-      "UV-stable, won't yellow like standard epoxy",
-      "Extremely abrasion and impact resistant",
-      "Can be applied in a wider temperature range",
-      "Backed by manufacturer + workmanship warranty",
+      "Faster cure times",
+      "Excellent UV stability",
+      "Ideal for garages and driveways",
+      "Impact resistant",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: [
-      "Residential Garages",
-      "Auto Showrooms",
-      "Retail Floors",
-      "Industrial Facilities",
-      "Commercial Entryways",
-    ],
+    applications: ["Garages", "Driveways", "Patios", "Pool Decks", "Commercial Entryways"],
     faqs: [
       {
-        q: "How long does a polyaspartic coating installation take?",
-        a: "Many projects are completed in as little as 1 day due to the rapid cure time.",
-      },
-      {
-        q: "Do you offer warranties on polyaspartic coatings?",
-        a: "Yes, all polyaspartic installations include manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "Often a single day, thanks to fast curing.",
       },
       {
         q: "How do I get a quote?",
-        a: "Fill out our quote form or call us for a free written estimate within one business day.",
+        a: "Reach out for a free written estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "polyurethane-coatings": {
-    tagline: "Flexible, chemical-resistant coatings for demanding commercial floors.",
-    description: [
-      "Polyurethane coatings offer excellent chemical and thermal resistance, making them a top choice for food processing plants, commercial kitchens, and facilities exposed to harsh cleaning agents. Their flexible finish resists cracking under thermal shock and heavy point loads.",
-      "We often pair polyurethane top coats with an epoxy base layer to combine strong adhesion with superior surface durability.",
-    ],
-    localHeading: "Polyurethane Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors provides polyurethane coating systems for commercial and industrial clients across ${locations}.`,
+    h1: "Polyurethane Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Chemical-resistant flooring built for demanding commercial environments. Ideal for kitchens, plants, and facilities that need year-round durability.",
+    about:
+      "Our polyurethane coatings in Langley, BC are built for chemical exposure, temperature changes, and constant moisture in commercial kitchens and industrial facilities.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Superior chemical and thermal shock resistance",
-      "Flexible finish resists cracking under heavy loads",
-      "Ideal for washdown and food-grade environments",
-      "Excellent long-term UV and abrasion resistance",
-      "Backed by manufacturer + workmanship warranty",
+      "Strong chemical resistance",
+      "Suited for temperature-sensitive spaces",
+      "Long-lasting performance",
+      "Custom formulation",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Commercial Kitchens",
-      "Food Processing Plants",
-      "Chemical Storage Rooms",
-      "Parking Structures",
-      "Manufacturing Floors",
+      "Food Processing",
+      "Industrial Plants",
+      "Pharmaceutical Facilities",
+      "Cold Storage",
     ],
     faqs: [
       {
-        q: "How long does a polyurethane coating installation take?",
-        a: "Most projects take 2–4 days depending on the number of coats and curing requirements.",
-      },
-      {
-        q: "Do you offer warranties on polyurethane coatings?",
-        a: "Yes, polyurethane coatings include manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "Scheduled to minimize operational disruption.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for an on-site assessment and free written estimate.",
+        a: "Contact us with facility details for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "decorative-concrete": {
-    tagline: "Custom stains, stamps & finishes that turn plain concrete into a design feature.",
-    description: [
-      "Decorative concrete lets you transform plain grey slabs into a genuine design element — through acid staining, stamped patterns, engraved designs, or polished finishes. It's a cost-effective way to get the look of stone, wood, or tile at a fraction of the price.",
-      "Every decorative concrete project is customized on-site to match your color palette, texture preferences, and the character of your home or business.",
-    ],
-    localHeading: "Decorative Concrete Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors designs and installs decorative concrete finishes for homeowners and businesses throughout ${locations}.`,
+    h1: "Decorative Concrete Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Metallic, flake & custom finishes that turn plain concrete into a feature floor. A stylish upgrade that's still built to last.",
+    about:
+      "Our decorative concrete coatings in Langley, BC add style without sacrificing durability — metallic, flake, and custom finishes on a proven, long-lasting base.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Custom stains, stamps, and engraved patterns",
-      "Far more affordable than natural stone or tile",
-      "Sealed finish resists staining and wear",
-      "Wide range of colors and textures available",
-      "Backed by manufacturer + workmanship warranty",
+      "Metallic and flake options",
+      "Residential and commercial use",
+      "Durable, premium appearance",
+      "Free design consultation",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Driveways", "Walkways", "Pool Decks", "Patios", "Commercial Entryways"],
+    applications: ["Showrooms", "Retail Spaces", "Basements", "Feature Garage Floors", "Entryways"],
     faqs: [
       {
-        q: "How long does a decorative concrete installation take?",
-        a: "Timelines vary by technique, but most residential projects take 2–4 days including curing and sealing.",
-      },
-      {
-        q: "Do you offer warranties on decorative concrete?",
-        a: "Yes, decorative concrete finishes include a sealed-surface and workmanship warranty.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on design.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free written estimate — we'll walk through design options during your on-site consultation.",
+        a: "Book a free design consultation.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "food-safe-coatings": {
-    tagline: "NSF-compliant flooring systems built for food safety and hygiene.",
-    description: [
-      "Food processing and preparation environments require flooring that withstands constant washdowns, temperature swings, and strict hygiene standards. Our food-safe coating systems are seamless, non-porous, and resistant to bacteria growth — helping you meet health and safety compliance requirements.",
-      "We offer slip-resistant textures and coved base options to eliminate hard-to-clean corners, a common source of contamination in food environments.",
-    ],
-    localHeading: "Food Safe Environment Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs food-safe coatings for commercial kitchens, processing plants, and food service businesses throughout ${locations}.`,
+    h1: "Food Safe Environment Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Seamless, hygienic flooring built for commercial kitchens & food facilities. Designed to meet strict sanitation and safety standards.",
+    about:
+      "Our food safe environment coatings in Langley, BC are seamless, sanitary, and resistant to grease and chemicals — built to meet strict hygiene standards.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Seamless, non-porous surface resists bacteria",
-      "Withstands frequent washdowns and steam cleaning",
-      "Slip-resistant textures for wet work environments",
-      "Coved base options for full hygienic compliance",
-      "Backed by manufacturer + workmanship warranty",
+      "Seamless, easy to clean",
+      "Grease and chemical resistant",
+      "Meets hygiene standards",
+      "Slip-resistant options",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Commercial Kitchens",
-      "Food Processing Plants",
+      "Restaurants",
+      "Food Processing",
       "Bakeries",
-      "Breweries",
-      "Meat & Seafood Facilities",
+      "Cold Storage Rooms",
     ],
     faqs: [
       {
-        q: "How long does a food-safe coating installation take?",
-        a: "Most commercial kitchen projects take 2–3 days; larger processing facilities may take longer depending on square footage.",
-      },
-      {
-        q: "Do you offer warranties on food-safe coatings?",
-        a: "Yes, all food-safe systems include manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "Usually one to two days.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for a site assessment — we'll confirm compliance requirements and provide a written estimate.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "studio-coatings": {
-    tagline: "Sleek, durable flooring for dance, fitness, and creative studios.",
-    description: [
-      "Studios need flooring that's both visually striking and functionally durable — whether it's a dance studio, yoga space, photography studio, or fitness gym. Our studio coating systems offer smooth, seamless finishes with options for shock-absorbing underlayment and custom colors that match your brand.",
-      "We work closely with studio owners to balance aesthetics with performance, ensuring the floor supports the activity it's built for.",
-    ],
-    localHeading: "Studio Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs studio flooring for businesses throughout ${locations}.`,
+    h1: "Studio Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Smooth, durable flooring for fitness, dance & creative studios. A clean, professional finish built for daily use.",
+    about:
+      "Our studio coatings in Langley, BC create a smooth, professional finish built to handle daily commercial use in fitness, dance, and creative spaces.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Smooth, seamless, low-maintenance finish",
-      "Custom colors to match your studio's brand",
-      "Shock-absorbing underlayment options available",
-      "Slip-resistant textures for active use",
-      "Backed by manufacturer + workmanship warranty",
+      "Smooth, consistent finish",
+      "Durable for daily use",
+      "Customizable colours",
+      "Non-slip options",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
+      "Fitness Studios",
       "Dance Studios",
-      "Fitness & Yoga Studios",
-      "Photography Studios",
-      "Art Studios",
-      "Recording Studios",
+      "Yoga Studios",
+      "Creative Workspaces",
+      "Rehearsal Spaces",
     ],
     faqs: [
       {
-        q: "How long does a studio coating installation take?",
-        a: "Most studio spaces are completed in 2–3 days depending on size and finish complexity.",
-      },
-      {
-        q: "Do you offer warranties on studio coatings?",
-        a: "Yes, studio coatings include manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days, scheduled around business hours.",
       },
       {
         q: "How do I get a quote?",
-        a: "Reach out for a free consultation and written estimate tailored to your studio's needs.",
+        a: "Reach out for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "shops-coatings": {
-    tagline: "Rugged, easy-to-clean flooring built for busy retail and repair shops.",
-    description: [
-      "Retail shops, auto repair bays, and small manufacturing shops need flooring that can handle constant foot traffic, dropped tools, and chemical spills — while still looking professional to customers. Our shop coating systems combine industrial durability with a clean, polished appearance.",
-      "We customize the finish and color to fit your shop's brand and the specific wear patterns of your business.",
-    ],
-    localHeading: "Shop Coatings Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors installs shop coatings for businesses throughout ${locations}.`,
+    h1: "Shop Coatings in Langley, BC",
+    badge: "CONCRETE COATING SERVICE",
+    tagline:
+      "Industrial-grade flooring built for tools, chemicals & vehicle traffic. Reliable protection for busy auto shops and workshops.",
+    about:
+      "Our shop coatings in Langley, BC hold up to heavy tools, chemical spills, and vehicle traffic — built for real working conditions in auto shops and workshops.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Handles heavy foot and equipment traffic",
-      "Resists oil, chemicals, and shop fluids",
-      "Easy to clean and maintain daily",
-      "Custom colors to match your shop's branding",
-      "Backed by manufacturer + workmanship warranty",
+      "Built for tools and chemicals",
+      "Slip-resistant options",
+      "Fast installation",
+      "Low-maintenance finish",
+      "Manufacturer + workmanship warranty",
     ],
     applications: [
       "Auto Repair Shops",
-      "Retail Stores",
-      "Small Manufacturing Shops",
-      "Tool & Equipment Shops",
-      "Service Bays",
+      "Mechanic Bays",
+      "Workshops",
+      "Equipment Rooms",
+      "Small Manufacturing Units",
     ],
     faqs: [
       {
-        q: "How long does a shop coating installation take?",
-        a: "Most shop floors are completed in 1–3 days depending on size and traffic requirements.",
-      },
-      {
-        q: "Do you offer warranties on shop coatings?",
-        a: "Yes, shop coatings include manufacturer and workmanship warranties.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on size.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free written estimate — we'll assess your shop and provide a clear timeline.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "vinyl-flooring": {
-    tagline: "Waterproof, low-maintenance vinyl flooring for every room in your home.",
-    description: [
-      "Vinyl flooring offers the perfect blend of style, durability, and affordability. With realistic wood and stone-look finishes, our luxury vinyl plank and tile options are 100% waterproof — making them ideal for kitchens, bathrooms, and basements as well as living spaces throughout your home.",
-      "We help you choose the right thickness, wear layer, and finish for your household's traffic and lifestyle needs.",
-    ],
-    localHeading: "Vinyl Flooring Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors supplies and installs vinyl flooring for homeowners throughout ${locations}.`,
+    h1: "Vinyl Flooring in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Waterproof, low-maintenance flooring for every room in your home. A practical, stylish choice for kitchens, bathrooms, and basements.",
+    about:
+      "Our vinyl flooring in Langley, BC service brings waterproof, low-maintenance flooring to kitchens, bathrooms, and basements, installed with precise, gap-free craftsmanship.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "100% waterproof, ideal for kitchens & bathrooms",
-      "Realistic wood and stone-look finishes",
-      "Scratch and dent resistant wear layer",
-      "Comfortable underfoot with sound-dampening options",
-      "Backed by manufacturer + workmanship warranty",
+      "100% waterproof",
+      "Wide range of styles",
+      "Family and pet-friendly",
+      "Scratch and dent resistant",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Kitchens", "Bathrooms", "Basements", "Living Rooms", "Rental Properties"],
+    applications: ["Kitchens", "Bathrooms", "Basements", "Rental Properties", "Full-Home Installs"],
     faqs: [
       {
-        q: "How long does a vinyl flooring installation take?",
-        a: "Most residential rooms are completed in 1–2 days depending on square footage and subfloor prep.",
-      },
-      {
-        q: "Do you offer warranties on vinyl flooring?",
-        a: "Yes, vinyl flooring includes manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on size.",
       },
       {
         q: "How do I get a quote?",
-        a: "Fill out our quote form or call us for a free written estimate.",
+        a: "Fill our form or call for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "laminate-flooring": {
-    tagline: "Affordable, durable laminate flooring with the look of real hardwood.",
-    description: [
-      "Laminate flooring delivers the warm, natural look of hardwood at a more budget-friendly price point, with a tough wear layer that resists scratches and fading. It's an excellent choice for busy households and rental properties that need style without high maintenance.",
-      "We install laminate with proper underlayment and expansion gaps to ensure a long-lasting, squeak-free floor.",
-    ],
-    localHeading: "Laminate Flooring Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors supplies and installs laminate flooring for homeowners throughout ${locations}.`,
+    h1: "Laminate Flooring in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Affordable, durable flooring with the look of real hardwood. A budget-friendly option that still delivers a polished finish.",
+    about:
+      "Our laminate flooring in Langley, BC gives you the look of hardwood at a lower cost, installed with tight seams and clean transitions.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Realistic hardwood look at an affordable price",
-      "Scratch and fade resistant wear layer",
-      "Easy to clean and maintain",
-      "Wide range of plank styles and colors",
-      "Backed by manufacturer + workmanship warranty",
+      "Affordable hardwood look",
+      "Scratch and wear-resistant",
+      "Wide style range",
+      "Gap-free installation",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Living Rooms", "Bedrooms", "Home Offices", "Rental Properties", "Hallways"],
+    applications: [
+      "Living Rooms",
+      "Bedrooms",
+      "Hallways",
+      "Rental Properties",
+      "Full-Home Installs",
+    ],
     faqs: [
       {
-        q: "How long does a laminate flooring installation take?",
-        a: "Most rooms are completed in 1–2 days depending on size and subfloor condition.",
-      },
-      {
-        q: "Do you offer warranties on laminate flooring?",
-        a: "Yes, laminate flooring includes manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on footage.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free written estimate through our quote form.",
+        a: "Submit our form for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "hardwood-flooring": {
-    tagline: "Timeless solid and engineered hardwood flooring for lasting value.",
-    description: [
-      "Nothing matches the warmth and long-term value of genuine hardwood flooring. We supply and install both solid and engineered hardwood in a range of species, stains, and plank widths — built to be refinished and enjoyed for generations.",
-      "Our team handles acclimation, subfloor prep, and finishing to make sure your hardwood floor performs beautifully in the Fraser Valley's humidity and seasonal changes.",
-    ],
-    localHeading: "Hardwood Flooring Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors supplies and installs hardwood flooring for homeowners throughout ${locations}.`,
+    h1: "Hardwood Flooring in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Timeless, solid flooring installed for lasting value. Adds warmth and character to any room in your home.",
+    about:
+      "Our hardwood flooring in Langley, BC service covers species selection through precise installation, built to last for decades.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Solid and engineered hardwood options",
-      "Adds long-term resale value to your home",
-      "Can be sanded and refinished over decades",
-      "Wide selection of species, stains, and widths",
-      "Backed by manufacturer + workmanship warranty",
+      "Solid and engineered options",
+      "Decades of durability",
+      "Adds resale value",
+      "Detail-focused install",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Living Rooms", "Dining Rooms", "Bedrooms", "Home Offices", "Entryways"],
+    applications: [
+      "Main Living Areas",
+      "Bedrooms",
+      "Staircases",
+      "Whole-Home Installs",
+      "Renovations",
+    ],
     faqs: [
       {
-        q: "How long does a hardwood flooring installation take?",
-        a: "Most projects take 3–5 days including acclimation, installation, and finishing.",
-      },
-      {
-        q: "Do you offer warranties on hardwood flooring?",
-        a: "Yes, hardwood flooring includes manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "Three to five days depending on footage.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for a free consultation and written estimate.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "carpet-tiles": {
-    tagline: "Modular carpet tiles for flexible, easy-to-maintain commercial & home spaces.",
-    description: [
-      "Carpet tiles offer the comfort of carpet with the practicality of a modular system — individual tiles can be replaced if damaged or stained, without redoing the whole floor. They're a popular choice for offices, basements, and home theaters where comfort and easy upkeep both matter.",
-      "We help you choose tile patterns and colors that hide wear while fitting your space's design.",
-    ],
-    localHeading: "Carpet Tiles Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors supplies and installs carpet tiles for residential and commercial clients throughout ${locations}.`,
+    h1: "Carpet Tiles in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Flexible, durable modular flooring for homes & commercial spaces. Easy to maintain, replace, and customize to your space.",
+    about:
+      "Our carpet tiles in Langley, BC offer easy replacement and custom patterns — a popular choice for offices, basements, and commercial spaces.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Individual tiles replaceable without full floor removal",
-      "Sound-dampening and comfortable underfoot",
-      "Wide range of patterns and colors",
-      "Ideal for high-traffic commercial spaces",
-      "Backed by manufacturer + workmanship warranty",
+      "Easy tile replacement",
+      "Wide colour range",
+      "Great for high-traffic spaces",
+      "Fast, clean install",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Home Offices", "Basements", "Commercial Offices", "Home Theaters", "Playrooms"],
+    applications: ["Offices", "Basements", "Commercial Spaces", "Home Gyms", "Multi-Purpose Rooms"],
     faqs: [
       {
-        q: "How long does a carpet tile installation take?",
-        a: "Most spaces are completed in 1–2 days depending on square footage.",
-      },
-      {
-        q: "Do you offer warranties on carpet tiles?",
-        a: "Yes, carpet tiles include manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "One to two days depending on footage.",
       },
       {
         q: "How do I get a quote?",
-        a: "Fill out our quote form for a free written estimate.",
+        a: "Reach out for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "custom-stairs": {
-    tagline: "Beautifully finished custom stairs that tie your whole home together.",
-    description: [
-      "Stairs are one of the most visible features in any home, and mismatched or worn stair finishes can undercut an otherwise beautiful flooring project. We build and finish custom stairs — treads, risers, and railings — to seamlessly match your new hardwood, laminate, or vinyl flooring.",
-      "Every staircase is measured and built on-site to fit your home's exact dimensions and style.",
-    ],
-    localHeading: "Custom Stairs Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors designs and installs custom stairs for homeowners throughout ${locations}.`,
+    h1: "Custom Stairs in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Built for daily traffic, finished to match the rest of your home. From simple refinishing to full stair renovations.",
+    about:
+      "Our custom stairs in Langley, BC service covers hardwood treads and full renovations, finished to blend with your existing floors.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Seamlessly matched to your existing flooring",
-      "Built and finished to your home's exact measurements",
-      "Durable finishes built for daily foot traffic",
-      "Range of wood species and stain options",
-      "Backed by manufacturer + workmanship warranty",
+      "Hardwood, laminate, vinyl options",
+      "Built for daily traffic",
+      "Custom finishes",
+      "Safety-focused detailing",
+      "Manufacturer + workmanship warranty",
     ],
-    applications: ["Staircases", "Landings", "Hallway Transitions", "Entryways", "Basement Stairs"],
+    applications: [
+      "Interior Staircases",
+      "Landings",
+      "Stair Renovations",
+      "New Builds",
+      "Renovations",
+    ],
     faqs: [
       {
-        q: "How long does a custom stairs installation take?",
-        a: "Most staircases are completed in 2–4 days depending on complexity and number of steps.",
-      },
-      {
-        q: "Do you offer warranties on custom stairs?",
-        a: "Yes, custom stairs include manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "A few days depending on scope.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for a free on-site measurement and written estimate.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "self-leveling-floors": {
-    tagline: "Precision self-leveling underlayment for a perfectly flat foundation.",
-    description: [
-      "An uneven subfloor causes problems for every flooring type — cracked tile, gapping laminate, and squeaky hardwood. Our self-leveling floor systems pour a smooth, precise underlayment that corrects dips, slopes, and imperfections, giving your new flooring the flat foundation it needs to last.",
-      "This is often the essential first step before installing tile, hardwood, vinyl, or epoxy coatings over an older or damaged subfloor.",
-    ],
-    localHeading: "Self-Leveling Floors Installation Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors provides self-leveling floor prep for residential and commercial projects throughout ${locations}.`,
+    h1: "Self-Leveling Floors in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Correcting uneven subfloors before your new flooring goes down. The essential first step for a smooth, long-lasting finish.",
+    about:
+      "Our self-leveling floors in Langley, BC service corrects dips and rough patches, giving your new flooring a solid, even foundation.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Corrects uneven, sloped, or damaged subfloors",
-      "Creates the ideal base for tile, hardwood, or vinyl",
-      "Fast-curing, minimal project delay",
-      "Reduces cracking and gapping in finished floors",
-      "Backed by manufacturer + workmanship warranty",
+      "Corrects uneven subfloors",
+      "Essential prep for vinyl/laminate/tile",
+      "Prevents future issues",
+      "Fast-curing compounds",
+      "Workmanship warranty",
     ],
     applications: [
-      "Pre-Renovation Subfloor Prep",
+      "Pre-Renovation Prep",
       "Older Homes",
+      "New Installs",
+      "Basements",
       "Commercial Retrofits",
-      "Basement Floors",
-      "Uneven Concrete Slabs",
     ],
     faqs: [
       {
-        q: "How long does a self-leveling floor installation take?",
-        a: "Most self-leveling pours cure within 24–48 hours before the next flooring layer can be installed.",
-      },
-      {
-        q: "Do you offer warranties on self-leveling floors?",
-        a: "Yes, self-leveling work includes manufacturer product warranties and our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, across ${locations}.`,
+        q: "How long does it take?",
+        a: "Ready for new flooring within 24 hours.",
       },
       {
         q: "How do I get a quote?",
-        a: "Request a free on-site assessment — we'll determine if self-leveling is needed for your project.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
   "floor-demo": {
-    tagline: "Clean, efficient removal of old flooring to prep your space for a fresh start.",
-    description: [
-      "Before any new flooring goes down, old tile, carpet, vinyl, or hardwood often needs to be safely and cleanly removed. Our floor demolition service handles the full teardown — including adhesive removal and debris haul-away — so your subfloor is ready for the next installation without delay.",
-      "We take care to protect surrounding walls, trim, and fixtures during every demolition project.",
-    ],
-    localHeading: "Floor Demolition Service Across the Fraser Valley",
-    localCopy: `Fraser Valley Floors provides floor demolition and removal services for homeowners and businesses throughout ${locations}.`,
+    h1: "Floor Demolition in Langley, BC",
+    badge: "FLOORING SERVICE",
+    tagline:
+      "Clean, efficient removal of old flooring before your new install. We handle disposal and subfloor prep so you don't have to.",
+    about:
+      "Our floor demolition in Langley, BC service removes carpet, tile, hardwood, and vinyl cleanly, with responsible disposal and subfloor inspection.",
+    serving: "Serving: Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta.",
     benefits: [
-      "Full removal of tile, carpet, vinyl, and hardwood",
-      "Adhesive and debris removal included",
-      "Protects surrounding walls and fixtures",
-      "Prepares subfloor for immediate reinstallation",
-      "Backed by workmanship guarantee",
+      "Clean, efficient removal",
+      "Responsible disposal",
+      "Subfloor inspection included",
+      "Minimal mess",
+      "Workmanship warranty",
     ],
     applications: [
-      "Renovation Prep",
-      "Old Tile Removal",
-      "Carpet Removal",
-      "Damaged Hardwood Removal",
+      "Pre-Renovation Removal",
+      "Old Carpet Removal",
+      "Tile Removal",
+      "Hardwood Removal",
       "Commercial Retrofits",
     ],
     faqs: [
       {
-        q: "How long does floor demolition take?",
-        a: "Most residential rooms are cleared in a single day; larger commercial spaces may take 2–3 days.",
-      },
-      {
-        q: "Do you offer warranties on floor demolition?",
-        a: "Yes, floor demolition work is backed by our workmanship guarantee.",
-      },
-      {
-        q: "Do you serve all of the Fraser Valley?",
-        a: `Yes, including ${locations}.`,
+        q: "How long does it take?",
+        a: "Most rooms cleared within a day.",
       },
       {
         q: "How do I get a quote?",
-        a: "Contact us for a free on-site assessment and written estimate.",
+        a: "Contact us for a free estimate.",
+      },
+      {
+        q: "Warranty included?",
+        a: "Yes.",
+      },
+      {
+        q: "Do you serve the whole Fraser Valley?",
+        a: "Yes.",
       },
     ],
   },
 };
+
+// Aliases for alternate slug naming conventions
+serviceContent["shop-coatings"] = serviceContent["shops-coatings"];
+serviceContent["garage-floor-coatings"] = serviceContent["garage-coatings"];
+serviceContent["warehouse-floor-coatings"] = serviceContent["warehouse-coatings"];
+serviceContent["decorative-concrete-coatings"] = serviceContent["decorative-concrete"];
+serviceContent["food-safe-environment-coatings"] = serviceContent["food-safe-coatings"];
+serviceContent["floor-demolition"] = serviceContent["floor-demo"];
