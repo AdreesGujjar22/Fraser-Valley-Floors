@@ -8,15 +8,61 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Fraser Valley Floors | Local Flooring Experts" },
-      { name: "description", content: "Locally owned and operated. Meet the team behind Fraser Valley's most trusted flooring and concrete coating company." },
+      {
+        name: "description",
+        content:
+          "Locally owned and operated. Meet the team behind Fraser Valley's most trusted flooring and concrete coating company.",
+      },
       { property: "og:title", content: "About Fraser Valley Floors" },
-      { property: "og:description", content: "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade." },
+      {
+        property: "og:description",
+        content:
+          "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade.",
+      },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/about" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "About Fraser Valley Floors" },
-      { name: "twitter:description", content: "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade." },
+      {
+        name: "twitter:description",
+        content:
+          "Family-owned, fully insured, and built on craftsmanship. Serving the Fraser Valley for over a decade.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Fraser Valley Floors",
+          description:
+            "Locally owned and operated flooring and epoxy coating contractor in Fraser Valley, BC.",
+          url: "https://www.fraservalleyfloors.com/about",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://www.fraservalleyfloors.com",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "About",
+              item: "https://www.fraservalleyfloors.com/about",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: About,
 });
@@ -29,9 +75,18 @@ const stats = [
 ];
 
 const values = [
-  { title: "Craftsmanship First", body: "Every coating, every plank, every transition. We sweat the small stuff because it's what separates a good floor from a great one." },
-  { title: "Honest Pricing", body: "Detailed written quotes. No upsells, no surprises, no change-order games. The price you're quoted is the price you pay." },
-  { title: "Local Accountability", body: "We live where we work. Our reputation is built one Fraser Valley driveway at a time, and we treat every project like it's our own." },
+  {
+    title: "Craftsmanship First",
+    body: "Every coating, every plank, every transition. We sweat the small stuff because it's what separates a good floor from a great one.",
+  },
+  {
+    title: "Honest Pricing",
+    body: "Detailed written quotes. No upsells, no surprises, no change-order games. The price you're quoted is the price you pay.",
+  },
+  {
+    title: "Local Accountability",
+    body: "We live where we work. Our reputation is built one Fraser Valley driveway at a time, and we treat every project like it's our own.",
+  },
 ];
 
 function About() {
@@ -48,21 +103,47 @@ function About() {
       <section className="section-y">
         <div className="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Our Story</div>
-            <h2 className="font-display text-3xl font-black md:text-4xl">A Decade of Floors. Thousands of Happy Customers.</h2>
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">
+              Our Story
+            </div>
+            <h2 className="font-display text-3xl font-black md:text-4xl">
+              A Decade of Floors. Thousands of Happy Customers.
+            </h2>
             <div className="mt-5 space-y-4 text-foreground/85">
               <p>
-                Fraser Valley Floors started in a single garage with a diamond grinder, a few buckets of epoxy, and a stubborn belief that the Valley deserved better. A decade later, we're still that same crew — bigger trucks, more equipment, but the same hands-on approach to every job.
+                Fraser Valley Floors started in a single garage with a diamond grinder, a few
+                buckets of epoxy, and a stubborn belief that the Valley deserved better. A decade
+                later, we're still that same crew — bigger trucks, more equipment, but the same
+                hands-on approach to every job.
               </p>
               <p>
-                We specialise in two things and we do them both extremely well: <Link to="/services">concrete coatings</Link> and <Link to="/services">floor installation</Link>. From a one-day <Link to="/services/$slug" params={{ slug: "polyaspartic-coatings" }}>polyaspartic garage</Link> to a multi-room <Link to="/services/$slug" params={{ slug: "hardwood-flooring" }}>hardwood renovation</Link>, you'll work with the same in-house team from quote to walk-through.
+                We specialise in two things and we do them both extremely well:{" "}
+                <Link to="/services">concrete coatings</Link> and{" "}
+                <Link to="/services">floor installation</Link>. From a one-day{" "}
+                <Link to="/services/$slug" params={{ slug: "polyaspartic-coatings" }}>
+                  polyaspartic garage
+                </Link>{" "}
+                to a multi-room{" "}
+                <Link to="/services/$slug" params={{ slug: "hardwood-flooring" }}>
+                  hardwood renovation
+                </Link>
+                , you'll work with the same in-house team from quote to walk-through.
               </p>
               <p>
-                We're fully licensed, fully insured, and proudly local. When you call, you'll get one of us — not a call centre.
+                We're fully licensed, fully insured, and proudly local. When you call, you'll get
+                one of us — not a call centre.
               </p>
             </div>
           </div>
-          <img src={aboutImg} alt="Installer applying epoxy coating" loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card" />
+          <img
+            src={aboutImg}
+            alt="Fraser Valley Floors team installer applying epoxy floor coating in Abbotsford BC"
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={600}
+            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card"
+          />
         </div>
       </section>
 
@@ -71,8 +152,12 @@ function About() {
         <div className="container-x grid grid-cols-2 gap-6 py-12 md:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-display text-4xl font-black text-primary md:text-5xl">{s.value}</div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{s.label}</div>
+              <div className="font-display text-4xl font-black text-primary md:text-5xl">
+                {s.value}
+              </div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {s.label}
+              </div>
             </div>
           ))}
         </div>
@@ -82,7 +167,9 @@ function About() {
       <section className="section-y">
         <div className="container-x">
           <div className="max-w-2xl">
-            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Mission & Values</div>
+            <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">
+              Mission & Values
+            </div>
             <h2 className="font-display text-3xl font-black md:text-4xl">What We Stand For</h2>
             <p className="mt-3 text-foreground/80">Three principles guide everything we do.</p>
           </div>
@@ -98,7 +185,10 @@ function About() {
         </div>
       </section>
 
-      <CTABanner title="Let's Talk About Your Project" subtitle="Free quotes, honest advice, and zero pressure." />
+      <CTABanner
+        title="Let's Talk About Your Project"
+        subtitle="Free quotes, honest advice, and zero pressure."
+      />
     </>
   );
 }

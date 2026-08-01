@@ -15,15 +15,48 @@ export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects & Portfolio | Fraser Valley Floors" },
-      { name: "description", content: "Browse our portfolio of garage epoxy, warehouse coatings, patio coatings, hardwood and vinyl installations across the Fraser Valley." },
+      {
+        name: "description",
+        content:
+          "Browse our portfolio of garage epoxy, warehouse coatings, patio coatings, hardwood and vinyl installations across the Fraser Valley.",
+      },
       { property: "og:title", content: "Project Portfolio | Fraser Valley Floors" },
-      { property: "og:description", content: "Real flooring and concrete coating projects from across the Fraser Valley." },
+      {
+        property: "og:description",
+        content: "Real flooring and concrete coating projects from across the Fraser Valley.",
+      },
       { property: "og:url", content: "https://www.fraservalleyfloors.com/projects" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Project Portfolio | Fraser Valley Floors" },
-      { name: "twitter:description", content: "Real flooring and concrete coating projects from across the Fraser Valley." },
+      {
+        name: "twitter:description",
+        content: "Real flooring and concrete coating projects from across the Fraser Valley.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://www.fraservalleyfloors.com/projects" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://www.fraservalleyfloors.com",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Projects",
+              item: "https://www.fraservalleyfloors.com/projects",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Projects,
 });
@@ -86,9 +119,18 @@ function Projects() {
               <button
                 key={i}
                 onClick={() => setOpen(i)}
+                aria-label={`View full size photo of ${p.title} in ${p.city}, BC`}
                 className="group relative overflow-hidden rounded-lg text-left"
               >
-                <img src={p.src} alt={p.title} loading="lazy" className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img
+                  src={p.src}
+                  alt={`${p.title} completed in ${p.city}, BC by Fraser Valley Floors`}
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={600}
+                  className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition">
                   <div className="text-sm font-bold">{p.title}</div>
@@ -101,15 +143,27 @@ function Projects() {
       </section>
 
       {open !== null && (
-        <div className="fixed inset-0 z-50 grid place-items-center bg-background/95 p-4 backdrop-blur" onClick={() => setOpen(null)}>
-          <button aria-label="Close" className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full border border-border bg-background">
+        <div
+          className="fixed inset-0 z-50 grid place-items-center bg-background/95 p-4 backdrop-blur"
+          onClick={() => setOpen(null)}
+        >
+          <button
+            aria-label="Close"
+            className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full border border-border bg-background"
+          >
             <X className="h-5 w-5" />
           </button>
           <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-            <img src={filtered[open].src} alt={filtered[open].title} className="w-full rounded-xl" />
+            <img
+              src={filtered[open].src}
+              alt={filtered[open].title}
+              className="w-full rounded-xl"
+            />
             <div className="mt-4 text-center">
               <div className="font-display text-xl font-bold">{filtered[open].title}</div>
-              <div className="text-sm text-primary">{filtered[open].city}, BC · {filtered[open].cat}</div>
+              <div className="text-sm text-primary">
+                {filtered[open].city}, BC · {filtered[open].cat}
+              </div>
             </div>
           </div>
         </div>

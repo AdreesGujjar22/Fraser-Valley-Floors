@@ -59,12 +59,26 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
         </div>
         <div className="grid gap-1.5">
           <Label htmlFor="phone">Phone</Label>
-          <Input id="phone" name="phone" type="tel" placeholder="(604) 555-0123" required maxLength={30} />
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="(604) 555-0123"
+            required
+            maxLength={30}
+          />
         </div>
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" placeholder="you@example.com" required maxLength={120} />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+          maxLength={120}
+        />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="service">Service</Label>
@@ -84,9 +98,21 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="message">Message</Label>
-        <Textarea id="message" name="message" rows={5} placeholder="Tell us about your project, size, and timeline." required maxLength={1000} />
+        <Textarea
+          id="message"
+          name="message"
+          rows={5}
+          placeholder="Tell us about your project, size, and timeline."
+          required
+          maxLength={1000}
+        />
       </div>
-      <Button type="submit" disabled={submitting} size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-12">
+      <Button
+        type="submit"
+        disabled={submitting}
+        size="lg"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-12"
+      >
         {submitting ? "Sending..." : "Request My Free Quote"}
       </Button>
       <p className="text-xs text-muted-foreground">

@@ -68,7 +68,8 @@ export function Header() {
         </div>
 
         <button
-          aria-label="Toggle menu"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
           className="grid h-10 w-10 place-items-center rounded-md border border-border lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
