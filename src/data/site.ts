@@ -7,7 +7,5 @@ export const site = {
   email: "info@fraservalleyfloors.com",
   emailHref: "mailto:info@fraservalleyfloors.com",
   address: "Fraser Valley, British Columbia, Canada",
-  hours: [
-    { day: "Available", time: "24 Hours, 7 Days a Week" },
-  ],
+  hours: [{ day: "Available", time: "24 Hours, 7 Days a Week" }],
 };

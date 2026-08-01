@@ -24,7 +24,11 @@ export function CTABanner({
               <h2 className="font-display text-3xl font-black md:text-4xl">{title}</h2>
               <p className="mt-3 max-w-xl text-foreground/80">{subtitle}</p>
             </div>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-12 px-7 text-base shadow-glow w-full md:w-auto">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-12 px-7 text-base shadow-glow w-full md:w-auto"
+            >
               <Link to={ctaTo}>
                 {ctaLabel} <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

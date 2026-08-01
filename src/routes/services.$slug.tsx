@@ -58,7 +58,7 @@ const applicationLinks: Record<string, string> = {
   "Residential Garages": "garage-coatings",
   "Home Workshops": "shops-coatings",
   "Home Gyms": "studio-coatings",
-  "Showrooms": "studio-coatings",
+  Showrooms: "studio-coatings",
   "Commercial Kitchens": "food-safe-coatings",
   "Retail Spaces": "shops-coatings",
   "Distribution Centres": "warehouse-coatings",
@@ -69,15 +69,15 @@ const applicationLinks: Record<string, string> = {
   "Pool Decks": "patio-coatings",
   "Outdoor Kitchens": "patio-coatings",
   "Covered Porches": "patio-coatings",
-  "Entryways": "decorative-concrete",
+  Entryways: "decorative-concrete",
   "Auto Showrooms": "polyaspartic-coatings",
   "Retail Floors": "vinyl-flooring",
   "Commercial Entryways": "polyurethane-coatings",
   "Food Processing Plants": "food-safe-coatings",
   "Chemical Storage Rooms": "polyurethane-coatings",
   "Parking Structures": "polyurethane-coatings",
-  "Bakeries": "food-safe-coatings",
-  "Breweries": "food-safe-coatings",
+  Bakeries: "food-safe-coatings",
+  Breweries: "food-safe-coatings",
   "Meat & Seafood Facilities": "food-safe-coatings",
   "Dance Studios": "studio-coatings",
   "Fitness & Yoga Studios": "studio-coatings",
@@ -111,7 +111,12 @@ const renderLocationCopy = (copy: string) => {
   return copy.split(new RegExp(`(${names})`)).map((part, index) => {
     const location = locations.find((item) => item.city === part);
     return location ? (
-      <Link key={`${part}-${index}`} to="/locations/$city" params={{ city: location.slug }} className="text-primary hover:underline">
+      <Link
+        key={`${part}-${index}`}
+        to="/locations/$city"
+        params={{ city: location.slug }}
+        className="text-primary hover:underline"
+      >
         {part}
       </Link>
     ) : (
@@ -128,7 +133,7 @@ const getSeoContent = (service: Service) => {
     title: service.metaTitle,
     description: service.metaDescription,
     keywords: `${service.name}, ${serviceType} Fraser Valley, ${serviceType} Abbotsford, ${serviceType} Langley, ${applications}`,
-    localHeading: `${service.name} Installation Across the Fraser Valley`,
+    localHeading: service.localHeading ?? `${service.name} Installation Across the Fraser Valley`,
     localCopy:
       service.localCopy ??
       `${site.name} provides professional ${service.name.toLowerCase()} for ${applications} throughout Abbotsford, Surrey, Langley, Chilliwack, Mission, Maple Ridge, and Delta. Every project starts with an on-site assessment and a clear written estimate.`,
@@ -164,6 +169,21 @@ const getFaqSchema = (service: Service) => ({
   })),
 });
 
+const getBreadcrumbSchema = (service: Service) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: service.name,
+      item: `${site.url}/services/${service.slug}`,
+    },
+  ],
+});
+
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }): import("@/data/services").Service => {
     const service = getService(params.slug);
@@ -197,6 +217,7 @@ export const Route = createFileRoute("/services/$slug")({
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(getServiceSchema(loaderData)) },
         { type: "application/ld+json", children: JSON.stringify(getFaqSchema(loaderData)) },
+        { type: "application/ld+json", children: JSON.stringify(getBreadcrumbSchema(loaderData)) },
       ],
     };
   },
@@ -224,7 +245,7 @@ function ServiceDetail() {
     <>
       <PageHero
         eyebrow={service.category === "coating" ? "Concrete Coating Service" : "Flooring Service"}
-        title={service.name}
+        title={`${service.name} in Fraser Valley`}
         subtitle={service.short}
         image={heroImages[service.slug] ?? fallbackHeroImages[service.category]}
         crumbs={[
@@ -246,11 +267,13 @@ function ServiceDetail() {
             </div>
 
             <section className="mt-10 rounded-lg border border-border bg-surface/40 p-5">
-              <h3 className="font-display text-xl font-bold">{seo.localHeading}</h3>
-              <p className="mt-3 text-foreground/85 leading-relaxed">{renderLocationCopy(seo.localCopy)}</p>
+              <h2 className="font-display text-xl font-bold">{seo.localHeading}</h2>
+              <p className="mt-3 text-foreground/85 leading-relaxed">
+                {renderLocationCopy(seo.localCopy)}
+              </p>
             </section>
 
-            <h3 className="mt-12 font-display text-xl font-bold">Key Benefits</h3>
+            <h2 className="mt-12 font-display text-xl font-bold">Key Benefits</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {service.benefits.map((b) => (
                 <li key={b} className="flex gap-3 rounded-lg border border-border bg-card p-4">
@@ -260,7 +283,7 @@ function ServiceDetail() {
               ))}
             </ul>
 
-            <h3 className="mt-12 font-display text-xl font-bold">Common Applications</h3>
+            <h2 className="mt-12 font-display text-xl font-bold">Common Applications</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {service.applications.map((a) => (
                 <span
@@ -268,7 +291,11 @@ function ServiceDetail() {
                   className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
                 >
                   {applicationLinks[a] && applicationLinks[a] !== service.slug ? (
-                    <Link to="/services/$slug" params={{ slug: applicationLinks[a] }} className="hover:underline">
+                    <Link
+                      to="/services/$slug"
+                      params={{ slug: applicationLinks[a] }}
+                      className="hover:underline"
+                    >
                       {a}
                     </Link>
                   ) : (
@@ -278,20 +305,23 @@ function ServiceDetail() {
               ))}
             </div>
 
-            <h3 className="mt-12 font-display text-xl font-bold">Project Gallery</h3>
+            <h2 className="mt-12 font-display text-xl font-bold">Project Gallery</h2>
             <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
               {gallery.map((src, i) => (
                 <img
                   key={i}
                   src={src}
-                  alt={`${service.name} example ${i + 1}`}
+                  alt={`${service.name} project example in Fraser Valley BC ${i + 1}`}
                   loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={600}
                   className="aspect-square w-full rounded-lg object-cover"
                 />
               ))}
             </div>
 
-            <h3 className="mt-12 font-display text-xl font-bold">Frequently Asked Questions</h3>
+            <h2 className="mt-12 font-display text-xl font-bold">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="mt-4">
               {service.faqs.map((f, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>

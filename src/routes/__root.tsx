@@ -79,37 +79,155 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 const localBusinessLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": site.url,
-  name: site.name,
-  description:
-    "Residential and commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC.",
-  telephone: site.phone,
-  email: site.email,
-  url: site.url,
-  priceRange: "$$",
-  image: `${site.url}/Fraser-Valley-Floors.png`,
-  areaServed: [
-    "Abbotsford", "Surrey", "Delta", "Langley", "Chilliwack", "Maple Ridge", "Mission",
+  "@graph": [
+    {
+      "@type": ["HomeAndConstructionBusiness", "FlooringContractor"],
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      description:
+        "Residential and commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC.",
+      telephone: site.phone,
+      email: site.email,
+      url: site.url,
+      priceRange: "$$",
+      image: `${site.url}/Fraser-Valley-Floors.png`,
+      logo: `${site.url}/Fraser-Valley-Floors.png`,
+      areaServed: [
+        "Abbotsford",
+        "Surrey",
+        "Delta",
+        "Langley",
+        "Chilliwack",
+        "Maple Ridge",
+        "Mission",
+      ],
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 49.0504,
+        longitude: -122.3045,
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Abbotsford",
+        addressRegion: "BC",
+        addressCountry: "CA",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: site.phone,
+        contactType: "customer service",
+        areaServed: "CA-BC",
+        availableLanguage: "English",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Flooring & Coating Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Epoxy Floor Coatings",
+              description:
+                "Durable epoxy coatings for garage floors, commercial & industrial spaces.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Polyaspartic Floor Coatings",
+              description:
+                "One-day UV-stable polyaspartic coatings for residential & commercial floors.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Hardwood & Vinyl Flooring Installation",
+              description:
+                "Expert installation of hardwood, engineered, luxury vinyl plank, and laminate flooring.",
+            },
+          },
+        ],
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "07:00",
+          closes: "18:00",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      alternateName: "Fraser Valley Floors Ltd.",
+      description: "Fraser Valley's premier flooring contractor and concrete coating specialist.",
+      publisher: {
+        "@id": `${site.url}/#organization`,
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${site.url}/#sitenavigation`,
+      name: "Main Site Navigation",
+      itemListElement: [
+        {
+          "@type": "SiteNavigationElement",
+          position: 1,
+          name: "Services | Epoxy & Polyaspartic Coatings",
+          description:
+            "Explore garage coatings, commercial epoxy, polyaspartic, hardwood, and vinyl flooring.",
+          url: `${site.url}/services`,
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 2,
+          name: "Projects & Portfolio",
+          description:
+            "Browse completed epoxy floor coating and custom flooring installations across Fraser Valley.",
+          url: `${site.url}/projects`,
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 3,
+          name: "About Fraser Valley Floors",
+          description:
+            "Learn about Fraser Valley's premier flooring contractor and concrete coating specialist.",
+          url: `${site.url}/about`,
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 4,
+          name: "Contact Us | Free Estimate",
+          description:
+            "Get a fast, free written estimate for your garage coating or flooring project.",
+          url: `${site.url}/contact`,
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 5,
+          name: "Flooring & Coating Guides | Blog",
+          description:
+            "Read expert tips, care guides, and comparison articles on epoxy coatings and flooring.",
+          url: `${site.url}/blog`,
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 6,
+          name: "Service Locations Across Fraser Valley",
+          description:
+            "Flooring and epoxy coating services in Abbotsford, Surrey, Langley, Chilliwack, and more.",
+          url: `${site.url}/locations`,
+        },
+      ],
+    },
   ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Fraser Valley",
-    addressRegion: "BC",
-    addressCountry: "CA",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: site.phone,
-    contactType: "customer service",
-    areaServed: "CA-BC",
-    availableLanguage: "English",
-  },
-  serviceArea: {
-    "@type": "AdministrativeArea",
-    name: "Fraser Valley, British Columbia",
-  },
-  openingHours: ["Mo-Su 00:00-23:59"],
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -117,17 +235,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley" },
+      { title: "Fraser Valley Floors: Flooring & Epoxy Coating Specialist" },
       {
         name: "description",
         content:
-          "Fraser Valley Floors provides residential & commercial flooring, epoxy floor coatings, and concrete resurfacing across Fraser Valley, BC. Call today!",
+          "Fraser Valley Floors offers residential & commercial flooring, epoxy garage coatings, polyaspartic systems, and hardwood installation across Fraser Valley, BC. Get a free quote today!",
       },
       { name: "author", content: site.name },
-      { name: "robots", content: "index, follow" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { name: "googlebot", content: "index, follow" },
+      { name: "geo.region", content: "CA-BC" },
+      { name: "geo.placename", content: "Fraser Valley, British Columbia" },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_CA" },
+      { property: "og:url", content: site.url },
       { property: "og:image", content: `${site.url}/Fraser-Valley-Floors.png` },
       { property: "og:image:alt", content: `${site.name} logo` },
       { name: "twitter:card", content: "summary_large_image" },
@@ -135,6 +260,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image:alt", content: `${site.name} logo` },
     ],
     links: [
+      { rel: "canonical", href: site.url },
+      {
+        rel: "alternate",
+        type: "text/markdown",
+        href: "/llms.txt",
+        title: "Clean Markdown Content for AI Assistants",
+      },
       { rel: "icon", type: "image/png", href: "/Fraser-Valley-Floors.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -186,9 +318,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
       <div className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
         <Footer />

@@ -38,8 +38,12 @@ export function Testimonials() {
     <section className="section-y bg-surface/40">
       <div className="container-x">
         <div className="max-w-2xl">
-          <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">5-Star Reviews</div>
-          <h2 className="font-display text-3xl font-black md:text-4xl">What Fraser Valley Customers Say</h2>
+          <div className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">
+            5-Star Reviews
+          </div>
+          <h2 className="font-display text-3xl font-black md:text-4xl">
+            What Fraser Valley Customers Say
+          </h2>
           <p className="mt-3 text-foreground/80">
             Real reviews from real homeowners and business owners across the Fraser Valley.
           </p>
@@ -47,7 +51,10 @@ export function Testimonials() {
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r) => (
-            <article key={r.name} className="rounded-xl border border-border bg-card p-6 shadow-card transition-transform hover:-translate-y-0.5">
+            <article
+              key={r.name}
+              className="rounded-xl border border-border bg-card p-6 shadow-card transition-transform hover:-translate-y-0.5"
+            >
               <div className="flex gap-0.5 text-primary">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
