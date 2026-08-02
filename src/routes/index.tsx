@@ -43,11 +43,11 @@ import aboutImg from "@/assets/about-team.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fraser Valley Floors | Flooring Contractor in Langley, BC" },
+      { title: "Fraser Valley Floors | Flooring Contractor in Fraser Valley, BC" },
       {
         name: "description",
         content:
-          "Fraser Valley Floors is a trusted Flooring Contractor offering residential & commercial flooring, epoxy coatings, and concrete resurfacing in Langley, BC.",
+          "Fraser Valley Floors is a trusted Flooring Contractor offering residential & commercial flooring, epoxy coatings, and concrete resurfacing Fraser Valleyin, BC.",
       },
       {
         property: "og:title",
@@ -285,8 +285,7 @@ function Home() {
         eyebrow="Fraser Valley, BC"
         title={
           <>
-            Reliable<span className="text-gradient-accent"> Flooring Contractor </span>in Langley,
-            BC
+            Fraser Valley's<span className="text-gradient-accent">Flooring Contractor</span><br/>Epoxy & Concrete Coating Experts
           </>
         }
         subtitle="Residential & commercial flooring installation, epoxy floor coatings, and concrete resurfacing - built to last, finished to impress."
