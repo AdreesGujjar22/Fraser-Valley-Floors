@@ -285,7 +285,7 @@ function Home() {
         eyebrow="Fraser Valley, BC"
         title={
           <>
-            Fraser Valley's<span className="text-gradient-accent">Flooring Contractor</span><br/>Epoxy & Concrete Coating Experts
+            Fraser Valley's<span className="text-gradient-accent"> Flooring Contractor</span><br/>Epoxy & Concrete Coating Experts
           </>
         }
         subtitle="Residential & commercial flooring installation, epoxy floor coatings, and concrete resurfacing - built to last, finished to impress."
