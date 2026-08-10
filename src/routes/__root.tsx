@@ -103,12 +103,12 @@ const localBusinessLd = {
       ],
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 49.0504,
-        longitude: -122.3045,
+        latitude: 49.133707,
+        longitude: -122.6594688,
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "20253 72 Ave",
+        streetAddress: "20267 72 Ave",
         addressLocality: "Langley",
         addressRegion: "BC",
         postalCode: "V2Y 1S8",
@@ -157,9 +157,9 @@ const localBusinessLd = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          opens: "07:00",
-          closes: "18:00",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "09:00",
+          closes: "17:00",
         },
       ],
     },

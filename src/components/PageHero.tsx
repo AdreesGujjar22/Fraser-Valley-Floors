@@ -82,7 +82,7 @@ export function PageHero({
             <button
               onClick={() =>
                 window.open(
-                  "https://www.google.com/maps/search/Fraser+Valley,+BC/@49.1500,-122.5600,10z",
+                  "https://www.google.com/maps/search/?api=1&query=20267+72+Ave%2C+Langley%2C+BC+V2Y+1S8%2C+Canada",
                   "_blank",
                 )
               }

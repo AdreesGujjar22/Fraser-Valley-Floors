@@ -6,7 +6,7 @@ interface GoogleMapProps {
 
 export function GoogleMap({ className = "" }: GoogleMapProps) {
   const mapEmbedUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d333918.06740626354!2d-122.75330379895188!3d49.12463870828751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d415b0efbc97%3A0xe7bc865d49265f4d!2sFraser%20Valley%2C%20BC!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2610.52230042315!2d-122.6594688!3d49.133707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d1004e45de45%3A0x7289ba25303a49af!2sFRASER%20VALLEY%20FLOORS!5e0!3m2!1sen!2s!4v1786387749913!5m2!1sen!2s";
 
   return (
     <div
@@ -19,11 +19,10 @@ export function GoogleMap({ className = "" }: GoogleMapProps) {
           src={mapEmbedUrl}
           width="100%"
           height="100%"
-          style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 h-full w-full grayscale-[0.1] contrast-[1.05]"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full border-0 grayscale-[0.1] contrast-[1.05]"
         />
       </div>
 
@@ -45,7 +44,7 @@ export function GoogleMap({ className = "" }: GoogleMapProps) {
         </div>
 
         <a
-          href="https://www.google.com/maps/search/Fraser+Valley,+BC/@49.1500,-122.5600,10z"
+          href="https://www.google.com/maps/search/?api=1&query=20267+72+Ave%2C+Langley%2C+BC+V2Y+1S8%2C+Canada"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-surface border border-border px-3.5 py-2 text-xs font-bold text-foreground hover:border-primary hover:text-primary transition-all shadow-xs"

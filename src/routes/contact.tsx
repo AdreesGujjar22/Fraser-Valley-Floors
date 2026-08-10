@@ -89,7 +89,7 @@ function Contact() {
                   {site.phone}
                 </a>
               }
-              sub="Mon–Sat business hours"
+              sub="Open 7 days a week"
             />
             <InfoCard
               icon={Mail}
