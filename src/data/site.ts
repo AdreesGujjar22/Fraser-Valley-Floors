@@ -6,6 +6,6 @@ export const site = {
   phoneHref: "tel:7785625420",
   email: "info@fraservalleyfloors.com",
   emailHref: "mailto:info@fraservalleyfloors.com",
-  address: "20253 72 Ave, Langley, BC V2Y 1S8",
-  hours: [{ day: "Available", time: "24 Hours, 7 Days a Week" }],
+  address: "20267 72 Ave, Langley, BC V2Y 1S8, Canada",
+  hours: [{ day: "Every day", time: "9 AM–5 PM" }],
 };
