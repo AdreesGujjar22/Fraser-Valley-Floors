@@ -135,9 +135,10 @@ export function Footer() {
             <span>Powered by</span>
             <img
               src="/developer_site_logo.png"
-              alt="Metro Valley Digital"
+              alt=""
               className="h-6 w-auto max-w-36 object-contain"
             />
+            <span>Metro Valley Digital</span>
           </a>
         </div>
       </div>
