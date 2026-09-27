@@ -125,6 +125,21 @@ export function Footer() {
         <div className="container-x flex flex-col items-center justify-between gap-2 py-5 text-xs text-muted-foreground md:flex-row">
           <div>© {new Date().getFullYear()} Fraser Valley Floors. All rights reserved.</div>
           <div>Proudly serving the Fraser Valley, British Columbia.</div>
+          <a
+            href="https://www.metrovalleydigital.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Powered by Metro Valley Digital"
+            className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
+          >
+            <span>Powered by</span>
+            <img
+              src="/developer_site_logo.png"
+              alt=""
+              className="h-6 w-auto max-w-36 object-contain"
+            />
+            <span>Metro Valley Digital</span>
+          </a>
         </div>
       </div>
     </footer>
